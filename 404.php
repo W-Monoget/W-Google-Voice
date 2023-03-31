@@ -68,7 +68,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="index.php">
                         <img class="img-fluid" src="images/logo-black.png" alt="img">
                     </a>
                     <button class="navbar-toggler white text-white" type="button">
