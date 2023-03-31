@@ -103,7 +103,7 @@ img.shape-right {
 	header .navbar-collapse { position: absolute; top: 60px; line-height: 0; left: 0; display: inline-block; width: 100%; -webkit-box-shadow: 0px 10px 30px 0px rgba(70, 200, 148, 0.2); -moz-box-shadow: 0px 10px 30px 0px rgba(70, 200, 148, 0.2); box-shadow: 0px 10px 30px 0px rgba(70, 200, 148, 0.2); }
 	header .navbar ul.navbar-nav { float: left; display: inline-block; width: 100%; max-width: 100%; background: #ffffff; }
 	header .sub-main { display: none; }
-	section { position: relative; z-index: 99; background: #ffffff; padding: 75px 0; display: block; width: 100%; overflow: hidden; }
+	section { position: relative; z-index: 99; background: #db5932; padding: 75px 0; display: block; width: 100%; overflow: hidden; }
 	.overview-block-ptb { padding: 75px 0; }
 	.overview-block-pt { padding: 75px 0 0 0; }
 	.overview-block-pb { padding: 0 0 75px 0; }
