@@ -9,7 +9,7 @@ $db_handle = new DBController();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Dashboard Admin | SK Driving School</title>
+    <title>Dashboard Admin | Google Voice</title>
     <meta name="description" content="Some description for the page"/>
     <?php require_once('include/css.php'); ?>
 </head>
@@ -88,45 +88,6 @@ $db_handle = new DBController();
                                         <?php
                                         $total_amount = $db_handle->runQuery("SELECT sum(product_total_price) as total_price FROM invoice_details as i, billing_details as b where i.billing_id=b.id and b.approve=2");
                                         echo '$' . $total_amount[0]["total_price"];
-                                        ?>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-6 col-xxl-4">
-                    <div class="widget-stat card bg-info">
-                        <div class="card-body p-4">
-                            <div class="media">
-                                <span class="mr-3">
-                                <i class="flaticon-381-heart"></i>
-                                </span>
-                                <div class="media-body text-white text-right">
-                                    <p class="mb-1">Total Contact Data</p>
-                                    <h3 class="text-white">
-                                        <?php
-                                        $row_count = $db_handle->numRows("SELECT * FROM contact order by id desc");
-                                        echo $row_count;
-                                        ?>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-6 col-xxl-4">
-                    <div class="widget-stat card bg-primary">
-                        <div class="card-body p-4">
-                            <div class="media">
-                                <span class="mr-3">
-                                <i class="flaticon-381-user-7"></i>
-                                </span>
-                                <div class="media-body text-white text-right">
-                                    <p class="mb-1">Total Newsletter Subscription</p>
-                                    <h3 class="text-white"><?php
-                                        $row_count = $db_handle->numRows("SELECT * FROM newsletter order by id desc");
-                                        echo $row_count;
                                         ?>
                                     </h3>
                                 </div>

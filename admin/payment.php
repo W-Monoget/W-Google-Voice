@@ -14,12 +14,12 @@ if (isset($_GET['id'])&&isset($_GET['type'])&&!isset($_GET['m'])) {
 
 
         $email_to = $package_sell_data[0]["email"];
-        $subject = 'Email From SK Driving School';
+        $subject = 'Email From Google Voice';
         $userName = $package_sell_data[0]["f_name"];
         $l = strtolower($userName);
         $u = ucfirst($l);
 
-        $headers = "From: SK Driving School <" . $db_handle->from_email() . ">\r\n";
+        $headers = "From: Google Voice <" . $db_handle->from_email() . ">\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
         $messege = "<html>
@@ -62,7 +62,7 @@ if (isset($_GET['id'])&&isset($_GET['type'])&&!isset($_GET['m'])) {
                             </p>
                             
                             <p style='color:black;font-weight:bold'>We look forward to speaking with you!<br>
-                                SK Driving School Team
+                                Google Voice Team
                              </p> 
                              <img src='" . $_SERVER['SERVER_NAME'] . "/images/email/contact.png' width='100%' height='auto' alt=''>
                              <h3 style='color:black;text-align: center;'>Please follow us on</h3>
@@ -95,12 +95,12 @@ if (isset($_GET['id'])&&isset($_GET['type'])&&!isset($_GET['m'])) {
 
 
         $email_to = $package_sell_data[0]["email"];
-        $subject = 'Email From SK Driving School';
+        $subject = 'Email From Google Voice';
         $userName = $package_sell_data[0]["f_name"];
         $l = strtolower($userName);
         $u = ucfirst($l);
 
-        $headers = "From: SK Driving School <" . $db_handle->from_email() . ">\r\n";
+        $headers = "From: Google Voice <" . $db_handle->from_email() . ">\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
         $messege = "<html>
@@ -143,7 +143,7 @@ if (isset($_GET['id'])&&isset($_GET['type'])&&!isset($_GET['m'])) {
                             </p>
                             
                             <p style='color:black;font-weight:bold'>We look forward to speaking with you!<br>
-                                SK Driving School Team
+                                Google Voice Team
                              </p> 
                              <img src='" . $_SERVER['SERVER_NAME'] . "/images/email/contact.png' width='100%' height='auto' alt=''>
                              <h3 style='color:black;text-align: center;'>Please follow us on</h3>
@@ -172,12 +172,12 @@ if (isset($_GET['id'])&&isset($_GET['type'])&&!isset($_GET['m'])) {
         $log = $db_handle->insertQuery("INSERT INTO `activity_log`(`log_text`) VALUES ('{$_SESSION['name']} IP: {$_SERVER['REMOTE_ADDR']} automatic decline this package data id:{$_GET['id']}')");
 
         $email_to = $package_sell_data[0]["email"];
-        $subject = 'Email From SK Driving School';
+        $subject = 'Email From Google Voice';
         $userName = $package_sell_data[0]["f_name"];
         $l = strtolower($userName);
         $u = ucfirst($l);
 
-        $headers = "From: SK Driving School <" . $db_handle->from_email() . ">\r\n";
+        $headers = "From: Google Voice <" . $db_handle->from_email() . ">\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
         $messege = "<html>
@@ -198,7 +198,7 @@ if (isset($_GET['id'])&&isset($_GET['type'])&&!isset($_GET['m'])) {
                             </p>
                             
                             <p style='color:black;font-weight:bold'>We look forward to speaking with you!<br>
-                                SK Driving School Team
+                                Google Voice Team
                              </p> 
                              <img src='" . $_SERVER['SERVER_NAME'] . "/images/email/contact.png' width='100%' height='auto' alt=''>
                              <h3 style='color:black;text-align: center;'>Please follow us on</h3>

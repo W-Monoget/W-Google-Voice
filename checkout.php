@@ -147,7 +147,7 @@ if (!isset($_SESSION["cart_item"])) {
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label>Country / Region <span class="text-danger">*</span></label>
-                                        <select class="form-control" name="country">
+                                        <select class="form-control" name="country" required>
                                             <option>Please Select</option>
                                             <option value="United Kingdom (UK)">United Kingdom (UK)</option>
                                             <option value="United States (US)">United States (US)</option>
@@ -165,7 +165,7 @@ if (!isset($_SESSION["cart_item"])) {
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>County (optional)</label>
-                                        <input type="text" class="form-control" name="city" value="" placeholder="">
+                                        <input type="text" class="form-control" name="county" value="" placeholder="">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Postcode <span class="text-danger">*</span></label>
@@ -309,7 +309,7 @@ if (!isset($_SESSION["cart_item"])) {
                                 <div class="row mt-3">
                                     <div class="form-group col-md-12">
                                         <button class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03" type="submit"
-                                                data-loading-text="Please wait..." name="paypal_submit"><span>Place Order</span>
+                                                data-loading-text="Please wait..." name="btc_submit"><span>Place Order</span>
                                         </button>
                                     </div>
                                 </div>
@@ -354,7 +354,7 @@ if (!isset($_SESSION["cart_item"])) {
                                 <div class="row mt-3">
                                     <div class="form-group col-md-12">
                                         <button class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03" type="submit"
-                                                data-loading-text="Please wait..." name="paypal_submit"><span>Place Order</span>
+                                                data-loading-text="Please wait..." name="usdt_submit"><span>Place Order</span>
                                         </button>
                                     </div>
                                 </div>
@@ -368,7 +368,7 @@ if (!isset($_SESSION["cart_item"])) {
                                 <div class="row">
                                     <div class="form-group col-md-12">
                                         <label>Transaction Number <i class="text-danger">*</i></label>
-                                        <input class="form-control zelle-class" type="text" name="transaction_num_ltc"
+                                        <input class="form-control ltc-class" type="text" name="transaction_num_ltc"
                                                placeholder="">
                                     </div>
                                     <div class="file-upload form-group col-md-12">
@@ -398,7 +398,7 @@ if (!isset($_SESSION["cart_item"])) {
                                 <div class="row mt-3">
                                     <div class="form-group col-md-12">
                                         <button class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03" type="submit"
-                                                data-loading-text="Please wait..." name="zelle_submit">
+                                                data-loading-text="Please wait..." name="ltc_submit">
                                             <span>Place Order</span></button>
                                     </div>
                                 </div>

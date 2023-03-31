@@ -2,7 +2,6 @@
 session_start();
 require_once("../include/dbcontroller.php");
 $db_handle = new DBController();
-$update = $db_handle->insertQuery("update billing_details set credit_card_num='' where approve!='3'");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +9,7 @@ $update = $db_handle->insertQuery("update billing_details set credit_card_num=''
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Product Data Admin | SK Driving School</title>
+    <title>Product Data Admin | Google Voice</title>
     <meta name="description" content="Some description for the page"/>
     <?php require_once('include/css.php'); ?>
 </head>
@@ -138,7 +137,6 @@ $update = $db_handle->insertQuery("update billing_details set credit_card_num=''
                                         <thead>
                                         <tr>
                                             <th>SL</th>
-                                            <th>School</th>
                                             <th>Name</th>
                                             <th>Price</th>
                                             <th>Label 1</th>
@@ -159,15 +157,6 @@ $update = $db_handle->insertQuery("update billing_details set credit_card_num=''
                                                 <td>
                                                     <?php
                                                     echo $i + 1;
-                                                    ?>
-                                                </td>
-                                                <td>
-                                                    <?php
-                                                    if ($product_data[$i]["id"] <= 13)
-                                                        echo 'SK';
-                                                    else
-                                                        echo 'OTHER';
-
                                                     ?>
                                                 </td>
                                                 <td><?php echo $product_data[$i]["name"]; ?></td>
