@@ -1,3 +1,13 @@
+<?php
+session_start();
+require_once("include/dbcontroller.php");
+$product_name = '';
+$product_price = '';
+$product_label_1 = '';
+$product_label_2 = '';
+$product_label_3 = '';
+$product_label_4 = '';
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,114 +16,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Product | Google Voice Accounts</title>
-    <meta name="description"
-          content="Buy Google Voice Accounts. It is a telephone number service that provides call forwarding and voicemail services, as well as voice and text messaging."/>
-    <meta name="robots" content="index, follow"/>
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
-    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
-    <link rel="canonical" href=""/>
-    <meta property="og:locale" content="en_US"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="Google Voice Accounts For Sale at Cheap - "/>
-    <meta property="og:description"
-          content="Buy Google Voice Accounts. It is a telephone number service that provides call forwarding and voicemail services, as well as voice and text messaging."/>
-    <meta property="og:url" content="/"/>
-    <meta property="og:site_name" content=""/>
-    <meta property="article:modified_time" content="2022-05-08T18:40:21+00:00"/>
-    <meta property="og:image" content=""/>
-    <meta name="twitter:card" content="summary_large_image"/>
-
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico"/>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- REVOLUTION STYLE SHEETS -->
-    <link rel="stylesheet" href="revslider/css/rs6.css">
-    <!-- Typography CSS -->
-    <link rel="stylesheet" href="css/typography.css">
-    <!-- Style CSS -->
-    <link rel='stylesheet' href='css/qloud-style.css'/>
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
 
-    <style>
-        button {
-            width: 150px;
-            height: 50px;
-            cursor: pointer;
-            background: #1d8a3b !important;
-            margin: 10px;
-            border: none;
-            border-radius: 10px;
-            box-shadow: -5px -5px 15px #46905b, 5px 5px 15px #1d8a3b, inset 5px 5px 10px #46905b, inset -5px -5px 10px #1d8a3b;
-            color: #ffffff;
-            font-size: 16px;
-        }
-
-        button:hover {
-            font-size: 15px;
-            transition: 500ms;
-        }
-
-        button:focus {
-            outline: none;
-        }
-
-        .white:hover {
-            color: #d7d7d7;
-            text-shadow: 0px 0px 10px #d7d7d7;
-        }
-
-        .rotate {
-            animation: rotation 25s infinite linear;
-        }
-
-        @keyframes rotation {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(359deg);
-            }
-        }
-    </style>
+    <?php require_once('include/css.php'); ?>
 </head>
 
 <body>
 <!-- Header -->
-<header id="main-header" class="header-main header2">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="index.php">
-                        <img class="img-fluid" src="images/logo-black.png" alt="img">
-                    </a>
-                    <button class="navbar-toggler white text-white" type="button">
-                        <i class="fa fa-shopping-cart pb-1 text-white"></i> &nbsp; Cart
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <h4 class="navbar-nav mr-auto w-100 justify-content-center">
-                            PROVIDING HIGH QUALITY PVA & SOCIAL MEDIA SERVICES
-                        </h4>
-                    </div>
-                    <div class="sub-main">
-                        <ul>
-                            <li class="d-inline">
-                                <a href="#">
-                                    <button class="white">
-                                        <i class="fa fa-shopping-cart pb-1 text-white"></i> &nbsp; Cart
-                                    </button>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
-</header>
+<?php require_once('include/menu.php'); ?>
 <!-- Header End -->
 
 <!-- Main-Content Start -->
@@ -131,9 +43,9 @@
                         <div class="iq-title-icon">
                         </div>
                         <h2 class="iq-title text-capitalize">
-                            10 Google Voice Accounts
+                            <?php echo $product_name; ?>
                         </h2>
-                        <h3>$40.00</h3>
+                        <h3>$<?php echo $product_price; ?></h3>
                         <ol class="iq-title-desc pr-lg-5">
                             <li>
                                 All accounts permanent (Guaranteed)
@@ -178,16 +90,18 @@
                             ▶ Skype: live:.cid.3e346e647754bcb7
                         </p>
                     </div>
-                    <div class="form-row">
-                        <input type="number" class="form-control mb-3" value="1" min="1"
-                               style="background: white;color: #0b0b0b;width: 150px">
-                    </div>
-
-                    <div class="iq-btn-container mt-3">
-                        <a class="iq-button iq-btn-round d-inline" href="#">
-                            Add To Cart
-                        </a>
-                    </div>
+                    <form method="post"
+                          action="product.php?action=add&code=<?php echo $_GET['code']; ?>"
+                          id="add-cart">
+                        <input type="hidden" name="code" id="code" value="<?php echo $_GET['code']; ?>"/>
+                        <div class="form-row">
+                            <input type="number" class="form-control mb-3" name="quantity" id="quantity" value="1" min="1"
+                                   style="background: white;color: #0b0b0b;width: 150px" required>
+                        </div>
+                        <div class="iq-btn-container mt-3">
+                            <input type="submit" value="Add To Cart" class="iq-button iq-btn-round d-inline"/>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -197,7 +111,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="iq-title mt-5 mb-3 wow fadeInUp" data-wow-delay="0.2s">Google Voice Numbers For Sale </h3>
+                    <h3 class="iq-title mt-5 mb-3 wow fadeInUp" data-wow-delay="0.2s">Google Voice Numbers For
+                        Sale </h3>
                     <p class="wow fadeInUp" data-wow-delay="0.2s">
                         Today, we cannot miss a single call. It is essential to stay connected with people in the
                         business. But the thing is how it is possible to stay connected everywhere and every time.
@@ -378,149 +293,9 @@
 
 </div>
 <!-- Main-Content End -->
-<!-- Footer Start -->
-<footer id="contact" class=" iq-over-dark-90">
-    <div class="footer-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6 ">
-                    <div class="widget">
-                        <div class="textwidget ">
-                            <p><img class="mb-4 img-fluid" src="images/logo.png" alt="qloud">
-                                <br>
-                                Google Voice provides PVA, Accounts & Much More Services For Different Popular Social
-                                Networks Such As Facebook, Instagram, Twitter & Etc.
-                            </p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-0 mt-4">
-                    <div class="widget">
-                        <h4 class="footer-title ">Contact Us</h4>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <ul class="iq-contact">
-                                    <li>
-                                        <a><i class="fa fa-skype"></i><span>live:.cid.3e346e647754bcb7</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="mailto:support@iqnonicthemes.com"><i class="fa fa-envelope"></i><span>test@gmail.com</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="tel:+0123456789"><i
-                                                class="fa fa-phone"></i><span>+12135109004</span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<?php require_once('include/footer.php'); ?>
 
-                <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-0 mt-4 text-center">
-                    <img src="images/google-voice/satisfaction.webp" class="img-fluid" alt=""/>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Address END -->
-    <div class="copyright-footer">
-        <div class="container">
-            <div class="pt-3 pb-3">
-                <div class="row justify-content-between">
-                    <div class="col-lg-12 col-md-12 text-md-center text-center">
-                        <span class="copyright">Copyright 2020 Google Voice All Rights Reserved.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- Footer End -->
-<!-- back-to-top -->
-<div id="back-to-top">
-    <a class="top" id="top" href="#top"> <i class="ion-ios-arrow-up"></i> </a>
-</div>
-<!-- back-to-top End -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="js/jquery-3.4.1.js"></script>
-<!-- jQuery  for scroll me js -->
-<script src='js/jquery-min.js'></script>
-<!-- popper  -->
-<script src="js/popper.min.js"></script>
-<!--  bootstrap -->
-<script src="js/bootstrap.min.js"></script>
-<!-- Appear JavaScript -->
-<script src="js/appear.js"></script>
-
-<!-- Jquery-migrate JavaScript -->
-<script src='js/jquery-migrate.min.js'></script>
-<!-- Scripts JavaScript -->
-<script src='js/scripts.js'></script>
-<!-- countdownTimer JavaScript -->
-<script src='js/jQuery.countdownTimer.min.js'></script>
-<!-- Tox-progress JavaScript -->
-<script src='js/tox-progress.min.js'></script>
-<!-- Timeline JavaScript -->
-<script src='js/timeline.js'></script>
-<!-- Timeline min JavaScript -->
-<script src='js/timeline.min.js'></script>
-<!-- Slick JavaScript -->
-<script src='js/slick.min.js'></script>
-<!-- Popper JavaScript -->
-<script src='js/popper.min.js'></script>
-<!-- Owl.carousel JavaScript -->
-<script src='js/owl.carousel.min.js'></script>
-<!-- Countdown JavaScript -->
-<script src='js/countdown.js'></script>
-<!-- Jquery.countTo JavaScript -->
-<script src='js/jquery.countTo.js'></script>
-<!-- Magnific-popup JavaScript -->
-<script src='js/jquery.magnific-popup.min.js'></script>
-<!-- Isotope.pkgd.min JavaScript -->
-<script src='js/isotope.pkgd.min.js'></script>
-<!-- Wow, JavaScript! -->
-<script src='js/wow.min.js'></script>
-<!--  Custom JavaScript -->
-<script src="js/custom.js"></script>
-<!-- REVOLUTION JS FILES -->
-<script src="revslider/js/revolution.tools.min.js"></script>
-<script src="revslider/js/rs6.min.js"></script>
-<script>
-
-    var revapi5,
-        tpj;
-    jQuery(function () {
-        tpj = jQuery;
-        if (tpj("#rev_slider_5_1").revolution == undefined) {
-            revslider_showDoubleJqueryError("#rev_slider_5_1");
-        } else {
-            revapi5 = tpj("#rev_slider_5_1").show().revolution({
-                jsFileLocation: "js/",
-                sliderLayout: "fullwidth",
-                visibilityLevels: "1240,1024,778,480",
-                gridwidth: "1440,1024,778,480",
-                gridheight: "870,768,650,600",
-                spinner: "spinner0",
-                editorheight: "870,768,650,600",
-                responsiveLevels: "1240,1024,778,480",
-                disableProgressBar: "on",
-                navigation: {
-                    onHoverStop: false
-                },
-                parallax: {
-                    levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 30],
-                    type: "mouse",
-                    origo: "slidercenter",
-                    speed: 0
-                },
-                fallbacks: {
-                    allowHTML5AutoPlayOnAndroid: true
-                },
-            });
-        }
-
-    });
-</script>
+<?php require_once('include/js.php'); ?>
 </body>
 </html>

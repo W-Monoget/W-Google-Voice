@@ -1,3 +1,12 @@
+<?php
+session_start();
+require_once("include/dbcontroller.php");
+$db_handle = new DBController();
+/*if (empty($_SERVER['HTTPS'])) {
+    header('Location: ');
+    exit;
+}*/
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,112 +15,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Home | Google Voice Accounts</title>
-    <meta name="description" content="Buy Google Voice Accounts. It is a telephone number service that provides call forwarding and voicemail services, as well as voice and text messaging." />
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <link rel="canonical" href="" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Google Voice Accounts For Sale at Cheap - " />
-    <meta property="og:description" content="Buy Google Voice Accounts. It is a telephone number service that provides call forwarding and voicemail services, as well as voice and text messaging." />
-    <meta property="og:url" content="/" />
-    <meta property="og:site_name" content="" />
-    <meta property="article:modified_time" content="2022-05-08T18:40:21+00:00" />
-    <meta property="og:image" content="" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="description"
+          content="Buy Google Voice Accounts. It is a telephone number service that provides call forwarding and voicemail services, as well as voice and text messaging."/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <link rel="canonical" href=""/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Google Voice Accounts For Sale at Cheap - "/>
+    <meta property="og:description"
+          content="Buy Google Voice Accounts. It is a telephone number service that provides call forwarding and voicemail services, as well as voice and text messaging."/>
+    <meta property="og:url" content="/"/>
+    <meta property="og:site_name" content=""/>
+    <meta property="article:modified_time" content="2022-05-08T18:40:21+00:00"/>
+    <meta property="og:image" content=""/>
+    <meta name="twitter:card" content="summary_large_image"/>
 
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico"/>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- REVOLUTION STYLE SHEETS -->
-    <link rel="stylesheet" href="revslider/css/rs6.css">
-    <!-- Typography CSS -->
-    <link rel="stylesheet" href="css/typography.css">
-    <!-- Style CSS -->
-    <link rel='stylesheet' href='css/qloud-style.css'/>
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
 
-    <style>
-        button {
-            width: 150px;
-            height: 50px;
-            cursor: pointer;
-            background: #1d8a3b !important;
-            margin: 10px;
-            border: none;
-            border-radius: 10px;
-            box-shadow: -5px -5px 15px #46905b, 5px 5px 15px #1d8a3b, inset 5px 5px 10px #46905b, inset -5px -5px 10px #1d8a3b;
-            color: #ffffff;
-            font-size: 16px;
-        }
-
-        button:hover {
-            font-size: 15px;
-            transition: 500ms;
-        }
-
-        button:focus {
-            outline: none;
-        }
-
-        .white:hover {
-            color: #d7d7d7;
-            text-shadow: 0px 0px 10px #d7d7d7;
-        }
-
-        .rotate{
-            animation: rotation 25s infinite linear;
-        }
-
-        @keyframes rotation {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(359deg);
-            }
-        }
-    </style>
+    <?php require_once('include/css.php'); ?>
 </head>
 
 <body>
 <!-- Header -->
-<header id="main-header" class="header-main header2">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="index.html">
-                        <img class="img-fluid" src="images/logo-black.png" alt="img">
-                    </a>
-                    <button class="navbar-toggler white text-white" type="button">
-                        <i class="fa fa-shopping-cart pb-1 text-white"></i> &nbsp; Cart
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <h4 class="navbar-nav mr-auto w-100 justify-content-center">
-                            PROVIDING HIGH QUALITY PVA & SOCIAL MEDIA SERVICES
-                        </h4>
-                    </div>
-                    <div class="sub-main">
-                        <ul>
-                            <li class="d-inline">
-                                <a href="#">
-                                    <button class="white">
-                                        <i class="fa fa-shopping-cart pb-1 text-white"></i> &nbsp; Cart
-                                    </button>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
-</header>
+<?php require_once('include/menu.php'); ?>
 <!-- Header End -->
 
 <!-- START qloud5 REVOLUTION SLIDER 6.1.8 --><p class="rs-p-wp-fix"></p>
@@ -157,24 +87,25 @@
                     Accounts are completely real.
                 </rs-layer><!--
 
-                     --><button
-                    id="slider-5-slide-5-layer-2"
-                    class="rs-layer white"
-                    href="#" target="_self" rel="nofollow"
-                    data-type="button"
-                    data-rsp_ch="on"
-                    data-xy="xo:135px,96px,72px,24px;y:m;yo:163px,115px,14px,-46px;"
-                    data-text="w:normal;s:18,16,16,16;l:18,16,45,20;"
-                    data-dim="h:50px;minh:0px,none,none,none;"
-                    data-padding="t:15,15,0,15;r:30;b:15,15,0,15;l:30;"
-                    data-border="bor:10px,10px,10px,10px;"
-                    data-frame_0="x:-50,-35,-26,-16;"
-                    data-frame_1="st:1200;sp:1000;sR:1200;"
-                    data-frame_999="o:0;st:w;sR:6800;"
-                    data-frame_hover="bgc:#0d1e67;bor:10px,10px,10px,10px;sp:100;e:Power1.easeInOut;bri:120%;"
-                    style="z-index:10;background-color:#007bfc;"
-            >Order Now
-            </button><!--
+                     -->
+                <button
+                        id="slider-5-slide-5-layer-2"
+                        class="rs-layer white"
+                        href="#" target="_self" rel="nofollow"
+                        data-type="button"
+                        data-rsp_ch="on"
+                        data-xy="xo:135px,96px,72px,24px;y:m;yo:163px,115px,14px,-46px;"
+                        data-text="w:normal;s:18,16,16,16;l:18,16,45,20;"
+                        data-dim="h:50px;minh:0px,none,none,none;"
+                        data-padding="t:15,15,0,15;r:30;b:15,15,0,15;l:30;"
+                        data-border="bor:10px,10px,10px,10px;"
+                        data-frame_0="x:-50,-35,-26,-16;"
+                        data-frame_1="st:1200;sp:1000;sR:1200;"
+                        data-frame_999="o:0;st:w;sR:6800;"
+                        data-frame_hover="bgc:#0d1e67;bor:10px,10px,10px,10px;sp:100;e:Power1.easeInOut;bri:120%;"
+                        style="z-index:10;background-color:#007bfc;"
+                >Order Now
+                </button><!--
 
                      -->
                 <rs-layer
@@ -189,7 +120,8 @@
                         data-frame_1="st:2000;sp:1000;sR:2000;"
                         data-frame_999="o:0;st:w;sR:6000;"
                         style="z-index:12;"
-                ><img src="images/google-voice/chrome.png" alt="qloud" class="rotate img-fluid" height="512" width="512" data-no-retina>
+                ><img src="images/google-voice/chrome.png" alt="qloud" class="rotate img-fluid" height="512" width="512"
+                      data-no-retina>
                 </rs-layer><!--
 -->                  </rs-slide>
         </rs-slides>
@@ -263,30 +195,33 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="iq-price-container iq-price-table-6 text-center iq-box-shadow wow fadeInUp"
                          data-wow-duration="0.6s" style="background: #cd7f32;">
+                        <?php
+                        $package_data = $db_handle->runQuery("SELECT * FROM tblproduct where id=2");
+                        ?>
                         <div class="iq-price-header">
-                            <span class="iq-price-label">BRONZE</span>
-                            <h4 class="iq-price">$40</h4>
-                            <p class="iq-price-description">10 Google Voice Accounts</p>
+                            <span class="iq-price-label"><?php echo $package_data[0]["name"]; ?></span>
+                            <h4 class="iq-price">$<?php echo (int)$package_data[0]["price"]; ?></h4>
+                            <p class="iq-price-description"><?php echo $package_data[0]["label_1"]; ?></p>
                         </div>
                         <div class="iq-price-body">
                             <ul class="iq-price-service">
                                 <li class="inactive">
-                                    <span>100% Real</span>
+                                    <span><?php echo $package_data[0]["label_2"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                                 <li class="inactive">
-                                    <span>Fast Delivery with 48 hours Replacement policy</span>
+                                    <span><?php echo $package_data[0]["label_3"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                                 <li class="inactive">
-                                    <span>Satisfaction Guaranteed</span>
+                                    <span><?php echo $package_data[0]["label_4"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                             </ul>
                         </div>
                         <div class="iq-price-footer">
                             <div class="iq-btn-container">
-                                <a class="iq-button iq-btn-round d-inline" href="#">
+                                <a class="iq-button iq-btn-round d-inline" href="Product?code=<?php echo $package_data[0]["code"]; ?>">
                                     ORDER
                                 </a>
                             </div>
@@ -296,30 +231,35 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="iq-price-container iq-price-table-6 text-center iq-box-shadow wow fadeInUp"
                          data-wow-duration="1.2s" style="background: #c0c0c0;">
+                        <?php
+                        $package_data = $db_handle->runQuery("SELECT * FROM tblproduct where id=3");
+                        ?>
                         <div class="iq-price-header">
-                            <span class="iq-price-label">SILVER</span>
-                            <h4 class="iq-price">$80</h4>
-                            <p class="iq-price-description">20 Google Voice Accounts</p>
+                            <span class="iq-price-label"><?php echo $package_data[0]["name"]; ?></span>
+                            <h4 class="iq-price">$<?php echo (int)$package_data[0]["price"]; ?></h4>
+                            <p class="iq-price-description"><?php echo $package_data[0]["label_1"]; ?></p>
                         </div>
                         <div class="iq-price-body">
                             <ul class="iq-price-service">
                                 <li class="inactive">
-                                    <span>100% Real</span>
+                                    <span><?php echo $package_data[0]["label_2"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                                 <li class="inactive">
-                                    <span>Fast Delivery with 48 hours Replacement policy</span>
+                                    <span><?php echo $package_data[0]["label_3"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                                 <li class="inactive">
-                                    <span>Satisfaction Guaranteed</span>
+                                    <span><?php echo $package_data[0]["label_4"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                             </ul>
                         </div>
                         <div class="iq-price-footer">
                             <div class="iq-btn-container">
-                                <a class="iq-button iq-btn-round d-inline" href="#"> ORDER </a>
+                                <a class="iq-button iq-btn-round d-inline" href="Product?code=<?php echo $package_data[0]["code"]; ?>">
+                                    ORDER
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -327,30 +267,35 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="iq-price-container iq-price-table-6 text-center iq-box-shadow wow fadeInUp"
                          data-wow-duration="1.8s" style="background: #ffd700">
+                        <?php
+                        $package_data = $db_handle->runQuery("SELECT * FROM tblproduct where id=4");
+                        ?>
                         <div class="iq-price-header">
-                            <span class="iq-price-label">GOLD</span>
-                            <h4 class="iq-price">$200</h4>
-                            <p class="iq-price-description">50 Google Voice Accounts</p>
+                            <span class="iq-price-label"><?php echo $package_data[0]["name"]; ?></span>
+                            <h4 class="iq-price">$<?php echo (int)$package_data[0]["price"]; ?></h4>
+                            <p class="iq-price-description"><?php echo $package_data[0]["label_1"]; ?></p>
                         </div>
                         <div class="iq-price-body">
                             <ul class="iq-price-service">
                                 <li class="inactive">
-                                    <span>100% Real</span>
+                                    <span><?php echo $package_data[0]["label_2"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                                 <li class="inactive">
-                                    <span>Fast Delivery with 48 hours Replacement policy</span>
+                                    <span><?php echo $package_data[0]["label_3"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                                 <li class="inactive">
-                                    <span>Satisfaction Guaranteed</span>
+                                    <span><?php echo $package_data[0]["label_4"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                             </ul>
                         </div>
                         <div class="iq-price-footer">
                             <div class="iq-btn-container">
-                                <a class="iq-button iq-btn-round d-inline" href="pricing-plan.html"> ORDER</a>
+                                <a class="iq-button iq-btn-round d-inline" href="Product?code=<?php echo $package_data[0]["code"]; ?>">
+                                    ORDER
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -358,30 +303,35 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="iq-price-container iq-price-table-6 text-center iq-box-shadow wow fadeInUp"
                          data-wow-duration="1.8s" style="background: #e5e4e2">
+                        <?php
+                        $package_data = $db_handle->runQuery("SELECT * FROM tblproduct where id=5");
+                        ?>
                         <div class="iq-price-header">
-                            <span class="iq-price-label">PLATINUM</span>
-                            <h4 class="iq-price">$400</h4>
-                            <p class="iq-price-description">100 Google Voice Accounts</p>
+                            <span class="iq-price-label"><?php echo $package_data[0]["name"]; ?></span>
+                            <h4 class="iq-price">$<?php echo (int)$package_data[0]["price"]; ?></h4>
+                            <p class="iq-price-description"><?php echo $package_data[0]["label_1"]; ?></p>
                         </div>
                         <div class="iq-price-body">
                             <ul class="iq-price-service">
                                 <li class="inactive">
-                                    <span>100% Real</span>
+                                    <span><?php echo $package_data[0]["label_2"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                                 <li class="inactive">
-                                    <span>Fast Delivery with 48 hours Replacement policy</span>
+                                    <span><?php echo $package_data[0]["label_3"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                                 <li class="inactive">
-                                    <span>Satisfaction Guaranteed</span>
+                                    <span><?php echo $package_data[0]["label_4"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                             </ul>
                         </div>
                         <div class="iq-price-footer">
                             <div class="iq-btn-container">
-                                <a class="iq-button iq-btn-round d-inline" href="#"> ORDER </a>
+                                <a class="iq-button iq-btn-round d-inline" href="Product?code=<?php echo $package_data[0]["code"]; ?>">
+                                    ORDER
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -391,30 +341,33 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="iq-price-container iq-price-table-6 text-center iq-box-shadow wow fadeInUp"
                          data-wow-duration="0.6s" style="background: #cbb110">
+                        <?php
+                        $package_data = $db_handle->runQuery("SELECT * FROM tblproduct where id=6");
+                        ?>
                         <div class="iq-price-header">
-                            <span class="iq-price-label">3 MONTHS OLD</span>
-                            <h4 class="iq-price">$30</h4>
-                            <p class="iq-price-description">5 Google Voice Accounts</p>
+                            <span class="iq-price-label"><?php echo $package_data[0]["name"]; ?></span>
+                            <h4 class="iq-price">$<?php echo (int)$package_data[0]["price"]; ?></h4>
+                            <p class="iq-price-description"><?php echo $package_data[0]["label_1"]; ?></p>
                         </div>
                         <div class="iq-price-body">
                             <ul class="iq-price-service">
                                 <li class="inactive">
-                                    <span>100% Real</span>
+                                    <span><?php echo $package_data[0]["label_2"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                                 <li class="inactive">
-                                    <span>Fast Delivery with 48 hours Replacement policy</span>
+                                    <span><?php echo $package_data[0]["label_3"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                                 <li class="inactive">
-                                    <span>Satisfaction Guaranteed</span>
+                                    <span><?php echo $package_data[0]["label_4"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                             </ul>
                         </div>
                         <div class="iq-price-footer">
                             <div class="iq-btn-container">
-                                <a class="iq-button iq-btn-round d-inline" href="#">
+                                <a class="iq-button iq-btn-round d-inline" href="Product?code=<?php echo $package_data[0]["code"]; ?>">
                                     ORDER
                                 </a>
                             </div>
@@ -424,30 +377,35 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="iq-price-container iq-price-table-6 text-center iq-box-shadow wow fadeInUp"
                          data-wow-duration="1.2s" style="background: #4292cc">
+                        <?php
+                        $package_data = $db_handle->runQuery("SELECT * FROM tblproduct where id=7");
+                        ?>
                         <div class="iq-price-header">
-                            <span class="iq-price-label">6 MONTHS OLD</span>
-                            <h4 class="iq-price">$120</h4>
-                            <p class="iq-price-description">25 Google Voice Accounts</p>
+                            <span class="iq-price-label"><?php echo $package_data[0]["name"]; ?></span>
+                            <h4 class="iq-price">$<?php echo (int)$package_data[0]["price"]; ?></h4>
+                            <p class="iq-price-description"><?php echo $package_data[0]["label_1"]; ?></p>
                         </div>
                         <div class="iq-price-body">
                             <ul class="iq-price-service">
                                 <li class="inactive">
-                                    <span>100% Real</span>
+                                    <span><?php echo $package_data[0]["label_2"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                                 <li class="inactive">
-                                    <span>Fast Delivery with 48 hours Replacement policy</span>
+                                    <span><?php echo $package_data[0]["label_3"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                                 <li class="inactive">
-                                    <span>Satisfaction Guaranteed</span>
+                                    <span><?php echo $package_data[0]["label_4"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                             </ul>
                         </div>
                         <div class="iq-price-footer">
                             <div class="iq-btn-container">
-                                <a class="iq-button iq-btn-round d-inline" href="#"> ORDER </a>
+                                <a class="iq-button iq-btn-round d-inline" href="Product?code=<?php echo $package_data[0]["code"]; ?>">
+                                    ORDER
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -455,30 +413,35 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="iq-price-container iq-price-table-6 text-center iq-box-shadow wow fadeInUp"
                          data-wow-duration="1.8s" style="background: #177a1e">
+                        <?php
+                        $package_data = $db_handle->runQuery("SELECT * FROM tblproduct where id=8");
+                        ?>
                         <div class="iq-price-header">
-                            <span class="iq-price-label">1 YEAR OLD</span>
-                            <h4 class="iq-price">$250</h4>
-                            <p class="iq-price-description">50 Google Voice Accounts</p>
+                            <span class="iq-price-label"><?php echo $package_data[0]["name"]; ?></span>
+                            <h4 class="iq-price">$<?php echo (int)$package_data[0]["price"]; ?></h4>
+                            <p class="iq-price-description"><?php echo $package_data[0]["label_1"]; ?></p>
                         </div>
                         <div class="iq-price-body">
                             <ul class="iq-price-service">
                                 <li class="inactive">
-                                    <span>100% Real</span>
+                                    <span><?php echo $package_data[0]["label_2"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                                 <li class="inactive">
-                                    <span>Fast Delivery with 48 hours Replacement policy</span>
+                                    <span><?php echo $package_data[0]["label_3"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                                 <li class="inactive">
-                                    <span>Satisfaction Guaranteed</span>
+                                    <span><?php echo $package_data[0]["label_4"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                             </ul>
                         </div>
                         <div class="iq-price-footer">
                             <div class="iq-btn-container">
-                                <a class="iq-button iq-btn-round d-inline" href="pricing-plan.html"> ORDER</a>
+                                <a class="iq-button iq-btn-round d-inline" href="Product?code=<?php echo $package_data[0]["code"]; ?>">
+                                    ORDER
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -486,30 +449,35 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="iq-price-container iq-price-table-6 text-center iq-box-shadow wow fadeInUp"
                          data-wow-duration="1.8s" style="background: #f38622">
+                        <?php
+                        $package_data = $db_handle->runQuery("SELECT * FROM tblproduct where id=9");
+                        ?>
                         <div class="iq-price-header">
-                            <span class="iq-price-label">2 YEARS OLD</span>
-                            <h4 class="iq-price">$175</h4>
-                            <p class="iq-price-description">25 Google Voice Accounts</p>
+                            <span class="iq-price-label"><?php echo $package_data[0]["name"]; ?></span>
+                            <h4 class="iq-price">$<?php echo (int)$package_data[0]["price"]; ?></h4>
+                            <p class="iq-price-description"><?php echo $package_data[0]["label_1"]; ?></p>
                         </div>
                         <div class="iq-price-body">
                             <ul class="iq-price-service">
                                 <li class="inactive">
-                                    <span>100% Real</span>
+                                    <span><?php echo $package_data[0]["label_2"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                                 <li class="inactive">
-                                    <span>Fast Delivery with 48 hours Replacement policy</span>
+                                    <span><?php echo $package_data[0]["label_3"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                                 <li class="inactive">
-                                    <span>Satisfaction Guaranteed</span>
+                                    <span><?php echo $package_data[0]["label_4"]; ?></span>
                                     <i aria-hidden="true" class=""></i>
                                 </li>
                             </ul>
                         </div>
                         <div class="iq-price-footer">
                             <div class="iq-btn-container">
-                                <a class="iq-button iq-btn-round d-inline" href="#"> ORDER </a>
+                                <a class="iq-button iq-btn-round d-inline" href="Product?code=<?php echo $package_data[0]["code"]; ?>">
+                                    ORDER
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -886,7 +854,7 @@
                         <div class="iq-accordion-block  1 accordion-active">
                             <div class="iq-accordion-title" style="">
                                 <div class="iq-icon-right"><i aria-hidden="true" class="ion ion-minus-round active"></i><i
-                                        aria-hidden="true" class="ion ion-plus inactive"></i></div>
+                                            aria-hidden="true" class="ion ion-plus inactive"></i></div>
                                 <h5 class="mb-0 accordion-title">
                                     Are all the accounts phone verified?
                                 </h5>
@@ -902,7 +870,7 @@
                         <div class="iq-accordion-block   2">
                             <div class="iq-accordion-title">
                                 <div class="iq-icon-right"><i aria-hidden="true" class="ion ion-minus-round active"></i><i
-                                        aria-hidden="true" class="ion ion-plus inactive"></i></div>
+                                            aria-hidden="true" class="ion ion-plus inactive"></i></div>
                                 <h5 class="mb-0 accordion-title">
                                     Can I buy Google voice accounts in large quantities?
                                 </h5>
@@ -916,7 +884,7 @@
                         <div class="iq-accordion-block   3">
                             <div class="iq-accordion-title">
                                 <div class="iq-icon-right"><i aria-hidden="true" class="ion ion-minus-round active"></i><i
-                                        aria-hidden="true" class="ion ion-plus inactive"></i></div>
+                                            aria-hidden="true" class="ion ion-plus inactive"></i></div>
                                 <h5 class="mb-0 accordion-title">
                                     Will these google voice accounts be suspended in the future?
                                 </h5>
@@ -932,7 +900,7 @@
                         <div class="iq-accordion-block   4">
                             <div class="iq-accordion-title">
                                 <div class="iq-icon-right"><i aria-hidden="true" class="ion ion-minus-round active"></i><i
-                                        aria-hidden="true" class="ion ion-plus inactive"></i></div>
+                                            aria-hidden="true" class="ion ion-plus inactive"></i></div>
                                 <h5 class="mb-0 accordion-title">
                                     How to buy google voice accounts?
                                 </h5>
@@ -954,149 +922,9 @@
 
 </div>
 <!-- Main-Content End -->
-<!-- Footer Start -->
-<footer id="contact" class=" iq-over-dark-90">
-    <div class="footer-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6 ">
-                    <div class="widget">
-                        <div class="textwidget ">
-                            <p><img class="mb-4 img-fluid" src="images/logo.png" alt="qloud">
-                                <br>
-                                Google Voice provides PVA, Accounts & Much More Services For Different Popular Social
-                                Networks Such As Facebook, Instagram, Twitter & Etc.
-                            </p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-0 mt-4">
-                    <div class="widget">
-                        <h4 class="footer-title ">Contact Us</h4>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <ul class="iq-contact">
-                                    <li>
-                                        <a><i class="fa fa-skype"></i><span>live:.cid.3e346e647754bcb7</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="mailto:support@iqnonicthemes.com"><i class="fa fa-envelope"></i><span>test@gmail.com</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="tel:+0123456789"><i
-                                                class="fa fa-phone"></i><span>+12135109004</span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<?php require_once('include/footer.php'); ?>
 
-                <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-0 mt-4 text-center">
-                    <img src="images/google-voice/satisfaction.webp" class="img-fluid" alt=""/>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Address END -->
-    <div class="copyright-footer">
-        <div class="container">
-            <div class="pt-3 pb-3">
-                <div class="row justify-content-between">
-                    <div class="col-lg-12 col-md-12 text-md-center text-center">
-                        <span class="copyright">Copyright 2020 Google Voice All Rights Reserved.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- Footer End -->
-<!-- back-to-top -->
-<div id="back-to-top">
-    <a class="top" id="top" href="#top"> <i class="ion-ios-arrow-up"></i> </a>
-</div>
-<!-- back-to-top End -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="js/jquery-3.4.1.js"></script>
-<!-- jQuery  for scroll me js -->
-<script src='js/jquery-min.js'></script>
-<!-- popper  -->
-<script src="js/popper.min.js"></script>
-<!--  bootstrap -->
-<script src="js/bootstrap.min.js"></script>
-<!-- Appear JavaScript -->
-<script src="js/appear.js"></script>
-
-<!-- Jquery-migrate JavaScript -->
-<script src='js/jquery-migrate.min.js'></script>
-<!-- Scripts JavaScript -->
-<script src='js/scripts.js'></script>
-<!-- countdownTimer JavaScript -->
-<script src='js/jQuery.countdownTimer.min.js'></script>
-<!-- Tox-progress JavaScript -->
-<script src='js/tox-progress.min.js'></script>
-<!-- Timeline JavaScript -->
-<script src='js/timeline.js'></script>
-<!-- Timeline min JavaScript -->
-<script src='js/timeline.min.js'></script>
-<!-- Slick JavaScript -->
-<script src='js/slick.min.js'></script>
-<!-- Popper JavaScript -->
-<script src='js/popper.min.js'></script>
-<!-- Owl.carousel JavaScript -->
-<script src='js/owl.carousel.min.js'></script>
-<!-- Countdown JavaScript -->
-<script src='js/countdown.js'></script>
-<!-- Jquery.countTo JavaScript -->
-<script src='js/jquery.countTo.js'></script>
-<!-- Magnific-popup JavaScript -->
-<script src='js/jquery.magnific-popup.min.js'></script>
-<!-- Isotope.pkgd.min JavaScript -->
-<script src='js/isotope.pkgd.min.js'></script>
-<!-- Wow, JavaScript! -->
-<script src='js/wow.min.js'></script>
-<!--  Custom JavaScript -->
-<script src="js/custom.js"></script>
-<!-- REVOLUTION JS FILES -->
-<script src="revslider/js/revolution.tools.min.js"></script>
-<script src="revslider/js/rs6.min.js"></script>
-<script>
-
-    var revapi5,
-        tpj;
-    jQuery(function () {
-        tpj = jQuery;
-        if (tpj("#rev_slider_5_1").revolution == undefined) {
-            revslider_showDoubleJqueryError("#rev_slider_5_1");
-        } else {
-            revapi5 = tpj("#rev_slider_5_1").show().revolution({
-                jsFileLocation: "js/",
-                sliderLayout: "fullwidth",
-                visibilityLevels: "1240,1024,778,480",
-                gridwidth: "1440,1024,778,480",
-                gridheight: "870,768,650,600",
-                spinner: "spinner0",
-                editorheight: "870,768,650,600",
-                responsiveLevels: "1240,1024,778,480",
-                disableProgressBar: "on",
-                navigation: {
-                    onHoverStop: false
-                },
-                parallax: {
-                    levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 30],
-                    type: "mouse",
-                    origo: "slidercenter",
-                    speed: 0
-                },
-                fallbacks: {
-                    allowHTML5AutoPlayOnAndroid: true
-                },
-            });
-        }
-
-    });
-</script>
+<?php require_once('include/js.php'); ?>
 </body>
 </html>

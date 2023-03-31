@@ -3,13 +3,13 @@ class DBController {
     private $host = "localhost";
     private $user = "root";
     private $password = "";
-    private $database = "sk_driving_school";
-    private $from_email='noreply@skdrivingschoolny.com';
-    private $notification_email='munna4115@gmail.com';
+    private $database = "google_voice";
+    private $from_email='noreply@voiceofgoogle.com';
+    private $notification_email='monoget1@gmail.com';
     private $conn;
 
     function __construct() {
-        if($_SERVER['SERVER_NAME']=="skdrivingschoolny.com"||$_SERVER['SERVER_NAME']=="www.skdrivingschoolny.com"){
+        if($_SERVER['SERVER_NAME']=="voiceofgoogle.com"||$_SERVER['SERVER_NAME']=="www.voiceofgoogle.com"){
             $this->host = "localhost";
             $this->user = "upgggnkkroycy";
             $this->password = "3e4bt%D1&2%o";

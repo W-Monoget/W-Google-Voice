@@ -1,74 +1,86 @@
-<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.4.1.js"></script>
+<!-- jQuery  for scroll me js -->
+<script src='js/jquery-min.js'></script>
+<!-- popper  -->
+<script src="js/popper.min.js"></script>
+<!--  bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Appear JavaScript -->
+<script src="js/appear.js"></script>
 
-<script src="vendor/wow/wow.min.js"></script>
+<!-- Jquery-migrate JavaScript -->
+<script src='js/jquery-migrate.min.js'></script>
+<!-- Scripts JavaScript -->
+<script src='js/scripts.js'></script>
+<!-- countdownTimer JavaScript -->
+<script src='js/jQuery.countdownTimer.min.js'></script>
+<!-- Tox-progress JavaScript -->
+<script src='js/tox-progress.min.js'></script>
+<!-- Timeline JavaScript -->
+<script src='js/timeline.js'></script>
+<!-- Timeline min JavaScript -->
+<script src='js/timeline.min.js'></script>
+<!-- Slick JavaScript -->
+<script src='js/slick.min.js'></script>
+<!-- Popper JavaScript -->
+<script src='js/popper.min.js'></script>
+<!-- Owl.carousel JavaScript -->
+<script src='js/owl.carousel.min.js'></script>
+<!-- Countdown JavaScript -->
+<script src='js/countdown.js'></script>
+<!-- Jquery.countTo JavaScript -->
+<script src='js/jquery.countTo.js'></script>
+<!-- Magnific-popup JavaScript -->
+<script src='js/jquery.magnific-popup.min.js'></script>
+<!-- Isotope.pkgd.min JavaScript -->
+<script src='js/isotope.pkgd.min.js'></script>
+<!-- Wow, JavaScript! -->
+<script src='js/wow.min.js'></script>
+<!--  Custom JavaScript -->
+<script src="js/custom.js"></script>
+<!-- REVOLUTION JS FILES -->
+<script src="revslider/js/revolution.tools.min.js"></script>
+<script src="revslider/js/rs6.min.js"></script>
 
-<script src="vendor/animsition/dist/js/animsition.min.js"></script>
+<script>
 
-<script src="vendor/slick/slick.min.js"></script>
-<script src="js/slick-custom.js"></script>
+    var revapi5,
+        tpj;
+    jQuery(function () {
+        tpj = jQuery;
+        if (tpj("#rev_slider_5_1").revolution == undefined) {
+            revslider_showDoubleJqueryError("#rev_slider_5_1");
+        } else {
+            revapi5 = tpj("#rev_slider_5_1").show().revolution({
+                jsFileLocation: "js/",
+                sliderLayout: "fullwidth",
+                visibilityLevels: "1240,1024,778,480",
+                gridwidth: "1440,1024,778,480",
+                gridheight: "870,768,650,600",
+                spinner: "spinner0",
+                editorheight: "870,768,650,600",
+                responsiveLevels: "1240,1024,778,480",
+                disableProgressBar: "on",
+                navigation: {
+                    onHoverStop: false
+                },
+                parallax: {
+                    levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 30],
+                    type: "mouse",
+                    origo: "slidercenter",
+                    speed: 0
+                },
+                fallbacks: {
+                    allowHTML5AutoPlayOnAndroid: true
+                },
+            });
+        }
 
-<script src="vendor/bootstrap/js/popper.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-<script src="vendor/revolution/js/jquery.themepunch.tools.min.js"></script>
-<script src="vendor/revolution/js/jquery.themepunch.revolution.min.js"></script>
-<script src="vendor/revolution/js/extensions/revolution.extension.video.min.js"></script>
-<script src="vendor/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-<script src="vendor/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script src="vendor/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-<script src="vendor/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script src="vendor/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script src="vendor/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-<script src="vendor/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-<script src="vendor/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-<script src="js/slide-custom.js"></script>
-
-<script src="vendor/lightbox2/js/lightbox.min.js"></script>
-
-<script src="vendor/parallax100/parallax100.js"></script>
+    });
+</script>
 
 <script src="admin/public/vendor/toastr/js/toastr.min.js" type="text/javascript"></script>
 
-<script>
-    $('.parallax100').parallax100();
-</script>
-
-<script src="js/main.js"></script>
-
 <script src="js/toaster-init.js"></script>
 
-<script>
-    $(function () {
-        $('body').on('click', '.btn-drive.size1.m-txt1.bg-main.bo-rad-4.trans-03', function () {
-            $('.btn-drive.size1.m-txt1.bg-main.bo-rad-4.trans-03.package').removeClass('active');
-            $(this).closest('.btn-drive.size1.m-txt1.bg-main.bo-rad-4.trans-03.package').addClass('active');
-        });
-    });
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-</script>
-<script>
-    $('.clients-carousel').owlCarousel({
-        autoplay: true,
-        loop: true,
-        margin: 15,
-        dots: false,
-        slideTransition: 'linear',
-        autoplayHoverPause: true,
-        pagination: false,
-        navigation: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 2
-            },
-            1200: {
-                items: 4
-            }
-
-        }
-    });
-</script>
