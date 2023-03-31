@@ -17,6 +17,35 @@
     <link rel='stylesheet' href='css/qloud-style.css'/>
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        button {
+            width: 150px;
+            height: 50px;
+            cursor: pointer;
+            background: #1d8a3b !important;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: -5px -5px 15px #46905b, 5px 5px 15px #1d8a3b, inset 5px 5px 10px #46905b, inset -5px -5px 10px #1d8a3b;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        button:hover {
+            font-size: 15px;
+            transition: 500ms;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        .white:hover {
+            color: #d7d7d7;
+            text-shadow: 0px 0px 10px #d7d7d7;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,9 +66,10 @@
                     <div class="sub-main">
                         <ul>
                             <li class="d-inline">
-                                <a href="javascript:void(0)" class="signup iq-button default iq-btn-round"
-                                   target="_blank">
-                                    <i class="fa fa-shopping-cart text-white pb-1"></i> &nbsp; Cart
+                                <a href="#">
+                                    <button class="white">
+                                        <i class="fa fa-shopping-cart pb-1 text-white"></i> &nbsp; Cart
+                                    </button>
                                 </a>
                             </li>
                         </ul>
@@ -94,9 +124,9 @@
                     Accounts are completely real.
                 </rs-layer><!--
 
-                     --><a
+                     --><button
                     id="slider-5-slide-5-layer-2"
-                    class="rs-layer iq-btn-round iq-button rev-btn"
+                    class="rs-layer white"
                     href="#" target="_self" rel="nofollow"
                     data-type="button"
                     data-rsp_ch="on"
@@ -111,7 +141,7 @@
                     data-frame_hover="bgc:#0d1e67;bor:10px,10px,10px,10px;sp:100;e:Power1.easeInOut;bri:120%;"
                     style="z-index:10;background-color:#007bfc;"
             >Order Now
-            </a><!--
+            </button><!--
 
                      -->
                 <rs-layer
@@ -178,8 +208,8 @@
                         </p>
                     </div>
                     <div class="iq-btn-container">
-                        <a class="iq-button iq-btn-round has-icon btn-icon-right d-inline" href="#">
-                            Order
+                        <a class="iq-button iq-btn-round d-inline" href="#">
+                            ORDER
                         </a>
                     </div>
                 </div>
@@ -199,7 +229,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="iq-price-container iq-price-table-6 text-center iq-box-shadow wow fadeInUp"
-                         data-wow-duration="0.6s">
+                         data-wow-duration="0.6s" style="background: #cd7f32;">
                         <div class="iq-price-header">
                             <span class="iq-price-label">BRONZE</span>
                             <h4 class="iq-price">$40</h4>
@@ -232,7 +262,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="iq-price-container iq-price-table-6 text-center iq-box-shadow wow fadeInUp"
-                         data-wow-duration="1.2s">
+                         data-wow-duration="1.2s" style="background: #c0c0c0;">
                         <div class="iq-price-header">
                             <span class="iq-price-label">SILVER</span>
                             <h4 class="iq-price">$80</h4>
@@ -263,7 +293,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="iq-price-container iq-price-table-6 text-center iq-box-shadow wow fadeInUp"
-                         data-wow-duration="1.8s">
+                         data-wow-duration="1.8s" style="background: #ffd700">
                         <div class="iq-price-header">
                             <span class="iq-price-label">GOLD</span>
                             <h4 class="iq-price">$200</h4>
@@ -294,7 +324,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="iq-price-container iq-price-table-6 text-center iq-box-shadow wow fadeInUp"
-                         data-wow-duration="1.8s">
+                         data-wow-duration="1.8s" style="background: #e5e4e2">
                         <div class="iq-price-header">
                             <span class="iq-price-label">PLATINUM</span>
                             <h4 class="iq-price">$400</h4>
@@ -327,7 +357,7 @@
             <div class="row mt-5">
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="iq-price-container iq-price-table-6 text-center iq-box-shadow wow fadeInUp"
-                         data-wow-duration="0.6s">
+                         data-wow-duration="0.6s" style="background: #cbb110">
                         <div class="iq-price-header">
                             <span class="iq-price-label">3 MONTHS OLD</span>
                             <h4 class="iq-price">$30</h4>
@@ -360,7 +390,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="iq-price-container iq-price-table-6 text-center iq-box-shadow wow fadeInUp"
-                         data-wow-duration="1.2s">
+                         data-wow-duration="1.2s" style="background: #4292cc">
                         <div class="iq-price-header">
                             <span class="iq-price-label">6 MONTHS OLD</span>
                             <h4 class="iq-price">$120</h4>
@@ -391,7 +421,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="iq-price-container iq-price-table-6 text-center iq-box-shadow wow fadeInUp"
-                         data-wow-duration="1.8s">
+                         data-wow-duration="1.8s" style="background: #177a1e">
                         <div class="iq-price-header">
                             <span class="iq-price-label">1 YEAR OLD</span>
                             <h4 class="iq-price">$250</h4>
@@ -422,7 +452,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="iq-price-container iq-price-table-6 text-center iq-box-shadow wow fadeInUp"
-                         data-wow-duration="1.8s">
+                         data-wow-duration="1.8s" style="background: #f38622">
                         <div class="iq-price-header">
                             <span class="iq-price-label">2 YEARS OLD</span>
                             <h4 class="iq-price">$175</h4>
@@ -469,7 +499,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="iq-icon-box iq-icon-box-style-4 iq-box-shadow">
+                    <div class="iq-icon-box iq-icon-box-style-4 iq-box-shadow" style="background: #cbb110">
                         <p>
                             Communication has definitely emerged as the most significant process; one cannot simply
                             function without communicating with one another. Whether you need to make a personal call to
@@ -523,7 +553,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="iq-icon-box iq-icon-box-style-4 iq-box-shadow">
+                    <div class="iq-icon-box iq-icon-box-style-4 iq-box-shadow" style="background: #4292cc">
                         <p>
                             Google voice is an internet-based telecommunication service that allows free PC to PC, PC to
                             mobile phone device as well as video-enabled calls. It is a voice over internet protocol

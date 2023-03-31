@@ -57,11 +57,11 @@ Import Css
 ::-moz-selection { background: #0d1e67; color: #fff; text-shadow: none; }
 ::selection { background: #0d1e67; color: #fff; text-shadow: none; }
 html, body { overflow: inherit !important; }
-body { font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: normal; line-height: 1.5; color: #5e7290; overflow-x: hidden; }
+body { font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: normal; line-height: 1.5; color: #000000; overflow-x: hidden; }
 a, .button { transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; color: #59597e; }
 a:focus { text-decoration: none !important; }
 a, .button, input { outline: medium none !important; color: #0D1E67; }
-h1, h2, h3, h4, h5, h6 { font-family: 'TeXGyreAdventor-Bold', sans-serif; color: #142149; margin: 0; -ms-word-wrap: break-word; word-wrap: break-word; line-height: 1.5; font-weight: 800; letter-spacing: 1px; }
+h1, h2, h3, h4, h5, h6 { font-family: 'TeXGyreAdventor-Bold', sans-serif; color: #000000; margin: 0; -ms-word-wrap: break-word; word-wrap: break-word; line-height: 1.5; font-weight: 800; letter-spacing: 1px; }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: inherit; }
 h1 { font-size: 3.052em; }
 h2 { font-size: 2.441em; }
@@ -77,7 +77,7 @@ h6 { font-size: 1em; }
 Extra class
 ---------------------------------------------------------------------*/
 .overflow-h { overflow: hidden; }
-section { position: relative; z-index: 99; background: #ffffff; padding: 100px 0; display: block; width: 100%; overflow: hidden; }
+section { position: relative; z-index: 99; background: #db5932; padding: 100px 0; display: block; width: 100%; overflow: hidden; }
 .overview-block-ptb { padding: 100px 0; }
 .overview-block-pt { padding: 100px 0 0 0; }
 .overview-block-pb { padding: 0 0 100px 0; }

@@ -2382,6 +2382,7 @@ Counter
     padding: 0 0 50px;
     border-radius: 6px;
     position: relative;
+    color: #000000;
 }
 
 .iq-price-table-6::before {
@@ -2391,6 +2392,58 @@ Counter
     bottom: 15px;
     right: -60px;
     background: #e8e9f0;
+    border-radius: 25px;
+    height: 60%;
+    transform: rotate(15deg);
+    width: 60px;
+}
+
+body > div.main-content > section.iq-pricing-section.pt-0.wow.fadeInUp > div > div:nth-child(2) > div:nth-child(1) > div::before{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 15px;
+    right: -60px;
+    background: #a05822;
+    border-radius: 25px;
+    height: 60%;
+    transform: rotate(15deg);
+    width: 60px;
+}
+
+body > div.main-content > section.iq-pricing-section.pt-0.wow.fadeInUp > div > div:nth-child(2) > div:nth-child(2) > div::before{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 15px;
+    right: -60px;
+    background: #CECECE;
+    border-radius: 25px;
+    height: 60%;
+    transform: rotate(15deg);
+    width: 60px;
+}
+
+body > div.main-content > section.iq-pricing-section.pt-0.wow.fadeInUp > div > div:nth-child(2) > div:nth-child(3) > div::before{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 15px;
+    right: -60px;
+    background: #FFE15D;
+    border-radius: 25px;
+    height: 60%;
+    transform: rotate(15deg);
+    width: 60px;
+}
+
+body > div.main-content > section.iq-pricing-section.pt-0.wow.fadeInUp > div > div:nth-child(2) > div:nth-child(4) > div::before{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 15px;
+    right: -60px;
+    background: #D4D4D4;
     border-radius: 25px;
     height: 60%;
     transform: rotate(15deg);
@@ -2442,7 +2495,7 @@ Counter
 .iq-price-table-6 .iq-price-body ul.iq-price-service li {
     list-style: none;
     line-height: 40px;
-    color: #566384;
+    color: #000000;
 }
 
 .iq-price-table-6 .iq-price-body ul.iq-price-service li:hover {
@@ -2473,11 +2526,11 @@ ul.iq-price-service li{
 }
 
 .iq-price-table-6:hover .iq-price-header, .iq-price-table-6.active .iq-price-header {
-    border-top-color: #007BFC;
+    border-top-color: #000000;
 }
 
 .iq-price-table-6:hover .iq-price-header .iq-price-label, .iq-price-table-6.active .iq-price-header .iq-price-label {
-    color: #007BFC;
+    color: #000000;
 }
 
 .iq-price-table-6.active::before {
