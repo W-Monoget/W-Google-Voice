@@ -45,6 +45,19 @@
             color: #d7d7d7;
             text-shadow: 0px 0px 10px #d7d7d7;
         }
+
+        .rotate{
+            animation: rotation 25s infinite linear;
+        }
+
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(359deg);
+            }
+        }
     </style>
 </head>
 
@@ -58,6 +71,9 @@
                     <a class="navbar-brand" href="index.html">
                         <img class="img-fluid" src="images/logo-black.png" alt="img">
                     </a>
+                    <button class="navbar-toggler white text-white" type="button">
+                        <i class="fa fa-shopping-cart pb-1 text-white"></i> &nbsp; Cart
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <h4 class="navbar-nav mr-auto w-100 justify-content-center">
                             PROVIDING HIGH QUALITY PVA & SOCIAL MEDIA SERVICES
@@ -156,7 +172,7 @@
                         data-frame_1="st:2000;sp:1000;sR:2000;"
                         data-frame_999="o:0;st:w;sR:6000;"
                         style="z-index:12;"
-                ><img src="images/google-voice/google-chrome.webp" alt="qloud" width="512" height="512" data-no-retina>
+                ><img src="images/google-voice/chrome.png" alt="qloud" class="rotate img-fluid" height="512" width="512" data-no-retina>
                 </rs-layer><!--
 -->                  </rs-slide>
         </rs-slides>
