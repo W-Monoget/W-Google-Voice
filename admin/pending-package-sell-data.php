@@ -2,7 +2,6 @@
 session_start();
 require_once("../include/dbcontroller.php");
 $db_handle = new DBController();
-$update= $db_handle->insertQuery("update billing_details set credit_card_num='' where approve!='3'");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,12 +77,10 @@ $update= $db_handle->insertQuery("update billing_details set credit_card_num='' 
                                     <tr>
                                         <th>SL</th>
                                         <th>Inv No</th>
-                                        <th>Student Name</th>
+                                        <th>Name</th>
                                         <th>Number</th>
                                         <th>Status</th>
                                         <th>Address</th>
-                                        <th>Preferred Schedule</th>
-                                        <th>Images</th>
                                         <th>Amount</th>
                                         <th>Action</th>
                                     </tr>
@@ -127,32 +124,6 @@ $update= $db_handle->insertQuery("update billing_details set credit_card_num='' 
                                                 ?>
                                             </td>
                                             <td><?php echo $package_sell_data[$i]["address"]; ?></td>
-                                            <td><?php
-                                                if($package_sell_data[$i]["preferred_schedule"]!=''){
-                                                    $sb = explode(',', $package_sell_data[$i]["preferred_schedule"]);
-                                                    foreach ($sb as $bb) {
-                                                        $timestamp = strtotime($bb);
-                                                        $day = date('m/d/Y', $timestamp);
-                                                        $time = date('h:i A', $timestamp);
-                                                        echo $day.' '.$time.'<br>';
-                                                    }
-                                                }
-                                            ?>
-                                            </td>
-                                            <td class="text-center">
-                                                <?php $sb = explode(',', $package_sell_data[$i]["attach_files"]);
-
-                                                    foreach ($sb as $bb) {
-                                                        if ($bb == '') {
-                                                        } 
-                                                        else {
-                                                 ?>
-                                                            <img src="../<?php echo $bb; ?>" width="100" height="100" />
-                                                <?php
-                                                        }
-                                                    }
-                                                ?>
-                                            </td>
                                             <td>
                                                 <?php
                                                 $total_amount = $db_handle->runQuery("SELECT sum(product_total_price) as total_price FROM invoice_details where billing_id='{$package_sell_data[$i]["id"]}'");
@@ -162,7 +133,7 @@ $update= $db_handle->insertQuery("update billing_details set credit_card_num='' 
                                             <td>
                                                 <div class="d-flex">
                                                     <button class="btn btn-secondary shadow btn-xs sharp mr-1"
-                                                       data-toggle="modal" data-target=".bd-example-modal-xl"><i
+                                                            data-toggle="modal" data-target=".bd-example-modal-xl"><i
                                                                 class="fa fa-eye" onclick="showInvoice(<?php echo $package_sell_data[$i]["id"]; ?>);"></i></button>
                                                     <?php
                                                     if ($package_sell_data[$i]["approve"] == 3) {

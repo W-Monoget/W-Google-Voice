@@ -77,14 +77,11 @@ $db_handle = new DBController();
                                     <tr>
                                         <th>SL</th>
                                         <th>Inv No</th>
-                                        <th>Student Name</th>
+                                        <th>Name</th>
                                         <th>Number</th>
                                         <th>Status</th>
                                         <th>Address</th>
-                                        <th>Preferred Schedule</th>
-                                        <th>Images</th>
                                         <th>Amount</th>
-                                        <th>Voucher</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -127,43 +124,11 @@ $db_handle = new DBController();
                                                 ?>
                                             </td>
                                             <td><?php echo $package_sell_data[$i]["address"]; ?></td>
-                                            <td><?php
-                                                if($package_sell_data[$i]["preferred_schedule"]!=''){
-                                                    $sb = explode(',', $package_sell_data[$i]["preferred_schedule"]);
-                                                    foreach ($sb as $bb) {
-                                                        $timestamp = strtotime($bb);
-                                                        $day = date('m/d/Y', $timestamp);
-                                                        $time = date('h:i A', $timestamp);
-                                                        echo $day.' '.$time.' <br>';
-                                                    }
-                                                }
-                                            ?>
-                                            </td>
-                                            <td class="text-center">
-                                                <?php $sb = explode(',', $package_sell_data[$i]["attach_files"]);
-                                                    $k=1;
-                                                    foreach ($sb as $bb) {
-                                                        if ($bb == '') {
-                                                        } 
-                                                        else {
-                                                 ?>
-                                                            <a href="../<?php echo $bb; ?>" target="_blank">image_<?php echo $k; ?></a>
-                                                <?php
-                                                        }
-                                                        $k++;
-                                                    }
-                                                ?>
-                                            </td>
                                             <td>
                                                 <?php
                                                 $total_amount = $db_handle->runQuery("SELECT sum(product_total_price) as total_price FROM invoice_details where billing_id='{$package_sell_data[$i]["id"]}'");
                                                 echo '$' . $total_amount[0]["total_price"];
                                                 ?>
-                                            </td>
-                                            <td>
-                                                <a href='https://skdrivingschoolny.com/Voucher?voucher=<?php
-                                                    echo $package_sell_data[$i]["code"];
-                                                ?>' target="_blank"> View Voucher </a>
                                             </td>
                                             <td>
                                                 <div class="d-flex">
