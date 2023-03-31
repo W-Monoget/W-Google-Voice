@@ -104,6 +104,10 @@ if (!isset($_SESSION["cart_item"])) {
             border: 1px solid black;
         }
 
+        .checkout-logo{
+            height: 30px;
+        }
+
     </style>
 </head>
 <body>
@@ -230,12 +234,12 @@ if (!isset($_SESSION["cart_item"])) {
                                         <div class="input-group-prepend mr-1">
                                             <div class="input-group-text">
                                                 <input type="radio" name="checkout"
-                                                       aria-label="Radio button for following text input" value="card"
-                                                       checked onclick="checkoutFunction(this.value);">
+                                                       aria-label="Radio button for following text input" value="btc"
+                                                       checked onclick="checkoutFunction(this.value);" style="height: 20px">
                                             </div>
                                         </div>
-                                        <img src="images/checkout/card.png" height="30px"/>
-                                        <label class="font-weight-bold">Card</label>
+                                        <img src="images/checkout/1.png" class="img-fluid checkout-logo" alt=""/>
+                                        <label class="font-weight-bold pl-2" style="font-size: 20px">BTC</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -243,12 +247,12 @@ if (!isset($_SESSION["cart_item"])) {
                                         <div class="input-group-prepend mr-1">
                                             <div class="input-group-text">
                                                 <input type="radio" name="checkout"
-                                                       aria-label="Radio button for following text input" value="paypal"
-                                                       onclick="checkoutFunction(this.value);">
+                                                       aria-label="Radio button for following text input" value="usdt"
+                                                       onclick="checkoutFunction(this.value);" style="height: 20px">
                                             </div>
                                         </div>
-                                        <img src="images/checkout/paypal.png" height="30px"/>
-                                        <label class="font-weight-bold">Paypal</label>
+                                        <img src="images/checkout/2.png" class="img-fluid checkout-logo" alt=""/>
+                                        <label class="font-weight-bold pl-2" style="font-size: 20px">USDT</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -256,113 +260,34 @@ if (!isset($_SESSION["cart_item"])) {
                                         <div class="input-group-prepend mr-1">
                                             <div class="input-group-text">
                                                 <input type="radio" name="checkout"
-                                                       aria-label="Radio button for following text input" value="zelle"
-                                                       onclick="checkoutFunction(this.value);">
+                                                       aria-label="Radio button for following text input" value="ltc"
+                                                       onclick="checkoutFunction(this.value);" style="height: 20px">
                                             </div>
                                         </div>
-                                        <img src="images/checkout/zelle.png" height="30px"/>
-                                        <label class="font-weight-bold ml-1">Zelle</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend mr-1">
-                                            <div class="input-group-text">
-                                                <input type="radio" name="checkout"
-                                                       aria-label="Radio button for following text input"
-                                                       value="cash-app" onclick="checkoutFunction(this.value);">
-                                            </div>
-                                        </div>
-                                        <img src="images/checkout/cash_app.png" height="30px"/>
-                                        <label class="font-weight-bold ml-1">Cash-App</label>
+                                        <img src="images/checkout/3.png" class="img-fluid checkout-logo" alt=""/>
+                                        <label class="font-weight-bold pl-2" style="font-size: 20px">LTC</label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="contact-form" id="card">
-                                <h3>Credit Card (Authorize.net)</h3>
-                                <p>Pay with your credit card via Authorize.net</p>
-                                <div class="row">
-                                    <div class="form-group col-md-12">
-                                        <label>Credit Card Number <i class="text-danger">*</i></label>
-                                        <input class="form-control card-class" type="text" name="credit_card_num"
-                                               placeholder="1234 1234 1234 1234" maxlength="16"
-                                               minlength="16" required>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Expiration Month <i class="text-danger">*</i></label>
-                                        <select name="exp_month" class="form-control card-class" required>
-                                            <option>Please Select</option>
-                                            <option value="01">01 Jan</option>
-                                            <option value="02">02 Feb</option>
-                                            <option value="03">03 Mar</option>
-                                            <option value="04">04 Apr</option>
-                                            <option value="05">05 May</option>
-                                            <option value="06">06 Jun</option>
-                                            <option value="07">07 Jul</option>
-                                            <option value="08">08 Aug</option>
-                                            <option value="09">09 Sep</option>
-                                            <option value="10">10 Oct</option>
-                                            <option value="11">11 Nov</option>
-                                            <option value="12">12 Dec</option>
-                                        </select>
-
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Expiration Year <i class="text-danger">*</i></label>
-                                        <select class="form-control card-class" name="exp_year" required>
-                                            <option>Please Select</option>
-                                            <?php
-                                            echo $firstYear = (int)date('Y');
-                                            $lastYear = $firstYear + 10;
-                                            for ($i = $firstYear; $i <= $lastYear; $i++) {
-                                                echo '<option value=' . $i . '>' . $i . '</option>';
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <label>CVV <i class="text-danger">*</i></label>
-                                        <input class="form-control card-class" type="text" name="cvv" placeholder="123"
-                                               maxlength="3"
-                                               minlength="3" required>
-
-                                        <div class="form-check mt-3">
-                                            <input class="form-check-input card-class" type="checkbox" value=""
-                                                   id="flexCheckChecked" required>
-                                            <label class="form-check-label" for="flexCheckChecked">
-                                                By Placing Order You accepting our <a href="Terms-and-Condition"
-                                                                                      class="text-primary"
-                                                                                      target="_blank">terms &
-                                                    condition</a>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <button class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03" type="submit"
-                                                data-loading-text="Please wait..." name="card_submit">
-                                            <span>Place Order</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="contact-form" id="paypal" style="display: none;">
-                                <h3>Paypal</h3>
-                                <p>Please pay in this email <span class="text-primary" id="paypal_mail"
-                                                                  onclick="viewInfo(1);">click here</span> for email
+                            <div class="contact-form" id="btc">
+                                <h3>BTC</h3>
+                                <p>Please pay in this address <span class="text-primary" id="btc_address"
+                                                                    onclick="viewInfo(1);">click here</span> for address
                                     from your
                                     wallet and share transaction screenshot for approve your order.</p>
                                 <div class="row">
                                     <div class="form-group col-md-12">
                                         <label>Transaction Number <i class="text-danger">*</i></label>
-                                        <input class="form-control paypal-class" type="text"
-                                               name="transaction_num_paypal"
+                                        <input class="form-control btc-class" type="text"
+                                               name="transaction_num_btc"
                                                placeholder="">
                                     </div>
                                     <div class="file-upload form-group col-md-12">
                                         <label>Payment Proof <i class="text-danger">*</i></label>
                                         <div class="input-group">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input paypal-class"
-                                                       id="inputGroupFile04" name="payment_proof_paypal"
+                                                <input type="file" class="custom-file-input btc-class"
+                                                       id="inputGroupFile04" name="payment_proof_btc"
                                                        aria-describedby="inputGroupFileAddon04">
                                                 <label class="custom-file-label" for="inputGroupFile04">Choose
                                                     file</label>
@@ -389,24 +314,25 @@ if (!isset($_SESSION["cart_item"])) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="contact-form" id="zelle" style="display: none;">
-                                <h3>Zelle</h3>
-                                <p>Please pay in this phone number <span class="text-primary" id="zelle_number"
-                                                                         onclick="viewInfo(2);">click here</span> for
-                                    number from your
+                            <div class="contact-form" id="usdt" style="display: none;">
+                                <h3>USDT</h3>
+                                <p>Please pay in this address <span class="text-primary" id="usdt_address"
+                                                                  onclick="viewInfo(2);">click here</span> for address
+                                    from your
                                     wallet and share transaction screenshot for approve your order.</p>
                                 <div class="row">
                                     <div class="form-group col-md-12">
                                         <label>Transaction Number <i class="text-danger">*</i></label>
-                                        <input class="form-control zelle-class" type="text" name="transaction_num_zelle"
+                                        <input class="form-control usdt-class" type="text"
+                                               name="transaction_num_usdt"
                                                placeholder="">
                                     </div>
                                     <div class="file-upload form-group col-md-12">
                                         <label>Payment Proof <i class="text-danger">*</i></label>
                                         <div class="input-group">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input zelle-class"
-                                                       id="inputGroupFile04" name="payment_proof_zelle"
+                                                <input type="file" class="custom-file-input usdt-class"
+                                                       id="inputGroupFile04" name="payment_proof_usdt"
                                                        aria-describedby="inputGroupFileAddon04">
                                                 <label class="custom-file-label" for="inputGroupFile04">Choose
                                                     file</label>
@@ -414,7 +340,51 @@ if (!isset($_SESSION["cart_item"])) {
                                         </div>
 
                                         <div class="form-check mt-3">
-                                            <input class="form-check-input zelle-class" type="checkbox" value=""
+                                            <input class="form-check-input paypal-class" type="checkbox" value=""
+                                                   id="flexCheckChecked">
+                                            <label class="form-check-label" for="flexCheckChecked">
+                                                By Placing Order You accepting our <a href="Terms-and-Condition"
+                                                                                      class="text-primary"
+                                                                                      target="_blank">terms &
+                                                    condition</a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="form-group col-md-12">
+                                        <button class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03" type="submit"
+                                                data-loading-text="Please wait..." name="paypal_submit"><span>Place Order</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-form" id="ltc" style="display: none;">
+                                <h3>LTC</h3>
+                                <p>Please pay in address <span class="text-primary" id="ltc_address"
+                                                                         onclick="viewInfo(3);">click here</span> for address
+                                    from your
+                                    wallet and share transaction screenshot for approve your order..</p>
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label>Transaction Number <i class="text-danger">*</i></label>
+                                        <input class="form-control zelle-class" type="text" name="transaction_num_ltc"
+                                               placeholder="">
+                                    </div>
+                                    <div class="file-upload form-group col-md-12">
+                                        <label>Payment Proof <i class="text-danger">*</i></label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input ltc-class"
+                                                       id="inputGroupFile04" name="payment_proof_ltc"
+                                                       aria-describedby="inputGroupFileAddon04">
+                                                <label class="custom-file-label" for="inputGroupFile04">Choose
+                                                    file</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-check mt-3">
+                                            <input class="form-check-input ltc-class" type="checkbox" value=""
                                                    id="flexCheckChecked">
                                             <label class="form-check-label" for="flexCheckChecked">
                                                 By Placing Order You accepting our <a href="Terms-and-Condition"
@@ -433,51 +403,6 @@ if (!isset($_SESSION["cart_item"])) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="contact-form" id="cash-app" style="display: none;">
-                                <h3>Cash-App</h3>
-                                <p>Please pay in this email <span class="text-primary" id="cash_app_mail"
-                                                                  onclick="viewInfo(3);">click here</span> for email
-                                    from your
-                                    wallet and share transaction screenshot for approve your order.</p>
-                                <div class="row">
-                                    <div class="form-group col-md-12">
-                                        <label>Transaction Number <i class="text-danger">*</i></label>
-                                        <input class="form-control cash-app-class" type="text"
-                                               name="transaction_num_cash_app"
-                                               placeholder="">
-                                    </div>
-                                    <div class="file-upload form-group col-md-12">
-                                        <label>Payment Proof <i class="text-danger">*</i></label>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input cash-app-class"
-                                                       id="inputGroupFile04" name="payment_proof_cash_app"
-                                                       aria-describedby="inputGroupFileAddon04">
-                                                <label class="custom-file-label" for="inputGroupFile04">Choose
-                                                    file</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-check mt-3">
-                                            <input class="form-check-input cash-app-class" type="checkbox" value=""
-                                                   id="flexCheckChecked">
-                                            <label class="form-check-label" for="flexCheckChecked">
-                                                By Placing Order You accepting our <a href="Terms-and-Condition"
-                                                                                      class="text-primary"
-                                                                                      target="_blank">terms &
-                                                    condition</a>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="form-group col-md-12">
-                                        <button class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03" type="submit"
-                                                data-loading-text="Please wait..." name="cash_app_submit"><span>Place Order</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </form>
@@ -490,139 +415,41 @@ if (!isset($_SESSION["cart_item"])) {
 
 <?php require_once('include/js.php'); ?>
 <script>
-    $(function () {
-        $(document).on('click', '.btn-add', function (e) {
-            e.preventDefault();
-
-            var dynaForm = $('.dynamic-wrap:first'),
-                currentEntry = $(this).parents('.entry:last'),
-                newEntry = $(currentEntry.clone()).appendTo(dynaForm);
-
-            newEntry.find('input').val('');
-            dynaForm.find('.entry:not(:first) .btn-add')
-                .removeClass('btn-add').addClass('btn-remove')
-                .removeClass('btn-success').addClass('btn-danger')
-                .html('-');
-        }).on('click', '.btn-remove', function (e) {
-            $(this).parents('.entry:first').remove();
-
-            e.preventDefault();
-            return false;
-        });
-    });
-
-    let fileInput = document.getElementById("file-upload-input");
-    let fileSelect = document.getElementsByClassName("file-upload-select")[0];
-    fileSelect.onclick = function () {
-        fileInput.click();
-    }
-    fileInput.onchange = function () {
-        let filename = fileInput.files.length + ' files';
-        let selectName = document.getElementsByClassName("file-select-name")[0];
-        selectName.innerText = filename;
-    }
-
-    let fileInput_2 = document.getElementById("file-upload-input-2");
-    let fileSelect_2 = document.getElementsByClassName("file-upload-select-2")[0];
-    fileSelect_2.onclick = function () {
-        fileInput_2.click();
-    }
-    fileInput_2.onchange = function () {
-        let filename = fileInput_2.files.length + ' files';
-        let selectName = document.getElementsByClassName("file-select-name-2")[0];
-        selectName.innerText = filename;
-    }
-
 
     function checkoutFunction(value) {
-        if (value == "card") {
-            document.getElementById("card").style.display = "block";
-            document.getElementById("paypal").style.display = "none";
-            document.getElementById("zelle").style.display = "none";
-            document.getElementById("cash-app").style.display = "none";
-            $(".card-class").attr('required', '');
-            $(".paypal-class").removeAttr('required');
-            $(".zelle-class").removeAttr('required');
-            $(".cash-app-class").removeAttr('required');
-        } else if (value == "paypal") {
-            document.getElementById("card").style.display = "none";
-            document.getElementById("paypal").style.display = "block";
-            document.getElementById("zelle").style.display = "none";
-            document.getElementById("cash-app").style.display = "none";
-            $(".card-class").removeAttr('required');
-            $(".paypal-class").attr('required', '');
-            $(".zelle-class").removeAttr('required');
-            $(".cash-app-class").removeAttr('required');
-        } else if (value == "zelle") {
-            document.getElementById("card").style.display = "none";
-            document.getElementById("paypal").style.display = "none";
-            document.getElementById("zelle").style.display = "block";
-            document.getElementById("cash-app").style.display = "none";
-            $(".card-class").removeAttr('required');
-            $(".paypal-class").removeAttr('required');
-            $(".zelle-class").attr('required', '');
-            $(".cash-app-class").removeAttr('required');
-        } else if (value == "cash-app") {
-            document.getElementById("card").style.display = "none";
-            document.getElementById("paypal").style.display = "none";
-            document.getElementById("zelle").style.display = "none";
-            document.getElementById("cash-app").style.display = "block";
-            $(".card-class").removeAttr('required');
-            $(".paypal-class").removeAttr('required');
-            $(".zelle-class").removeAttr('required');
-            $(".cash-app-class").attr('required', '');
-
+        if (value == "btc") {
+            document.getElementById("btc").style.display = "block";
+            document.getElementById("usdt").style.display = "none";
+            document.getElementById("ltc").style.display = "none";
+            $(".btc-class").attr('required', '');
+            $(".usdt-class").removeAttr('required');
+            $(".ltc-class").removeAttr('required');
+        } else if (value == "usdt") {
+            document.getElementById("btc").style.display = "none";
+            document.getElementById("usdt").style.display = "block";
+            document.getElementById("ltc").style.display = "none";
+            $(".btc-class").removeAttr('required');
+            $(".usdt-class").attr('required', '');
+            $(".ltc-class").removeAttr('required');
+        } else if (value == "ltc") {
+            document.getElementById("btc").style.display = "none";
+            document.getElementById("usdt").style.display = "none";
+            document.getElementById("ltc").style.display = "block";
+            $(".btc-class").removeAttr('required');
+            $(".usdt-class").removeAttr('required');
+            $(".ltc-class").attr('required', '');
         }
     }
 
     function viewInfo(value) {
         if (value == 1) {
-            document.getElementById("paypal_mail").innerHTML = "skdrivingschool.nyc@gmail.com";
+            document.getElementById("btc_address").innerHTML = "";
         } else if (value == 2) {
-            document.getElementById("zelle_number").innerHTML = "ZELLE, Name: SK Shaheb, Number: +1 (347) 925-2721";
+            document.getElementById("usdt_address").innerHTML = "";
         } else if (value == 3) {
-            document.getElementById("cash_app_mail").innerHTML = "Cash app Email: skdrivingschoolny@gmail.com Name: SK Driving School";
+            document.getElementById("ltc_address").innerHTML = "";
         }
     }
-
-    let is_weekend = function (date1) {
-        let dt = new Date(date1);
-        if (dt.getDay() == 0) {
-            return "sunday";
-        }
-        return "other";
-    }
-
-
-    function detectWeekend(val) {
-        console.log(is_weekend(val));
-        let time = document.getElementById('time');
-        let weekend = is_weekend(val);
-
-        removeOptions(time);
-
-        time.add(new Option('Choose..'));
-        time.selectedIndex = 1;
-
-        if (weekend === 'other') {
-            time.add(new Option('09:30 AM'));
-            time.add(new Option('03:00 PM'));
-        } else {
-            time.add(new Option('11:00 AM'));
-        }
-    }
-
-    function removeOptions(selectElement) {
-        let i, L = selectElement.options.length - 1;
-        for (i = L; i >= 0; i--) {
-            selectElement.remove(i);
-        }
-    }
-
-    document.getElementById("date").min = new Date().getFullYear() + "-" + parseInt(new Date().getMonth() + 1) + "-" + new Date().getDate();
-
-    let today = new Date().toISOString().slice(0, 16);
-    document.getElementsByName("preferred_schedule")[0].min = today;
 </script>
 </body>
 </html>
