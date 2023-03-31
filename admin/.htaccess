@@ -1,0 +1,37 @@
+RewriteEngine on
+
+RewriteRule ^Dashboard dashboard.php [NC,L]
+
+RewriteRule ^Contact-Data contact-data.php [NC,L]
+
+RewriteRule ^Product-Data product-data.php [NC,L]
+
+RewriteRule ^Newsletter-Data newsletter-data.php [NC,L]
+
+RewriteRule ^Package-Sell-Data package-sell-data.php [NC,L]
+
+RewriteRule ^Pending-Package-Sell-Data pending-package-sell-data.php [NC,L]
+
+RewriteRule ^Custom-Package custom-package.php [NC,L]
+
+RewriteRule ^Invoice-View invoice-view.php [NC,L]
+
+RewriteRule ^Seo-Data seo-data.php [NC,L]
+
+RewriteRule ^Activity-Log activity-log.php [NC,L]
+
+RewriteRule ^Payment payment.php [NC,L]
+
+RewriteRule ^Approve approve.php [NC,L]
+
+RewriteRule ^Update update.php [NC,L]
+
+RewriteRule ^Decline decline.php [NC,L]
+
+RewriteRule ^Change-Password change-password.php [NC,L]
+
+RewriteRule ^Login index.php [NC,L]
+
+RewriteRule ^Logout logout.php [NC,L]
+
+RewriteRule ^(?=.*[a-zA-Z\d].*)[a-zA-Z\d!@#$%&*]{7,}$  404.php [NC,L]

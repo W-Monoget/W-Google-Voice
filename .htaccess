@@ -1,0 +1,13 @@
+RewriteEngine on
+
+RewriteRule ^Home index.php [NE,L]
+
+RewriteRule ^404 404.php [NE,L]
+
+RewriteRule ^Cart cart.php [NE,L]
+
+RewriteRule ^Checkout checkout.php [NE,L]
+
+RewriteRule ^Product product.php [NE,L]
+
+RewriteRule ^Payment payment.php [NE,L]
