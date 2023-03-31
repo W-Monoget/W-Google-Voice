@@ -43,31 +43,11 @@ if (isset($_POST["id"])) {
                     <div>
                         <strong><?php echo $package_sell_data[0]["f_name"]; ?> <?php echo $package_sell_data[0]["l_name"]; ?></strong>
                     </div>
-                    <?php if ($package_sell_data[0]["id_name"] != "Please Select") {
-                        ?>
-                        <div><?php echo $package_sell_data[0]["id_name"]; ?>
-                            - <?php echo $package_sell_data[0]["id_value"]; ?></div>
-                        <?php
-                    }
-                    ?>
                     <div><?php echo $package_sell_data[0]["address"]; ?>, <?php echo $package_sell_data[0]["city"]; ?>,
-                        NY <?php echo $package_sell_data[0]["zip_code"]; ?></div>
+                        <?php echo $package_sell_data[0]["zip_code"]; ?></div>
                     <div>Email: <?php echo $package_sell_data[0]["email"]; ?></div>
                     <div>Phone:
                         (<?php echo substr($package_sell_data[0]["phone_number"], 0, 3) . ')' . substr($package_sell_data[0]["phone_number"], 3, 3) . '-' . substr($package_sell_data[0]["phone_number"], 6, 4); ?></div>
-                    <div><?php
-                        if ($package_sell_data[0]["preferred_schedule"] != '') {
-                            echo 'Schedule: <br/>';
-                            $sb = explode(',', $package_sell_data[0]["preferred_schedule"]);
-                            foreach ($sb as $bb) {
-                                $timestamp = strtotime($bb);
-                                $day = date('m/d/Y', $timestamp);
-                                $time = date('h:i A', $timestamp);
-                                echo $day . ' ' . $time . ' (PLC)<br>';
-                            }
-                        }
-                        ?>
-                    </div>
                 </div>
                 <div class="mt-4 col-lg-6 text-right">
                     <div class="row">
