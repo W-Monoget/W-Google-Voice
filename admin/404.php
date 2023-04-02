@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>404 Admin | Buffalo Star Driving School</title>
+    <title>404 Admin | Best Google Voice</title>
     <meta name="description" content="Some description for the page"/>
     <link rel="icon" type="image/png" sizes="16x16" href="public/images/favicon.png">
     <link href="public/css/style.css" rel="stylesheet">
@@ -20,7 +20,7 @@
                         found!</h4>
                     <p>You may have mistyped the address or the page may have moved.</p>
                     <div>
-                        <a class="btn btn-primary" href="login.html">Back to Log In Page</a>
+                        <a class="btn btn-primary" href="index.php">Back to Log In Page</a>
                     </div>
                 </div>
             </div>

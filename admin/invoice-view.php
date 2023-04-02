@@ -52,7 +52,7 @@ if (isset($_POST["id"])) {
                 <div class="mt-4 col-lg-6 text-right">
                     <div class="row">
                         <div class="col-lg-12"><img
-                                    src="../images/icons/logo-02.png"
+                                    src="../images/logo-black.png"
                                     class="img-fluid mb-3 height30" alt=""><br>
                             <span>Total amount: <strong>
                                 <?php

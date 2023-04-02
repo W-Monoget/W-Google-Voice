@@ -5,7 +5,7 @@ if(!isset($_SESSION["name"])){
                 </script>";
 }
 ?>
-<link rel="icon" type="image/png" href="../images/icons/favicon.png"/>
+<link rel="icon" type="image/png" href="../images/favicon.ico"/>
 <link href="public/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
 <link href="public/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
 <link href="public/css/style.css" rel="stylesheet" type="text/css"/>

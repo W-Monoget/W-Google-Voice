@@ -11,7 +11,7 @@ if (isset($_GET['id']) && isset($_GET['type'])) {
     $log = $db_handle->insertQuery("INSERT INTO `activity_log`(`log_text`) VALUES ('{$_SESSION['name']} IP: {$_SERVER['REMOTE_ADDR']} approve this package data id:{$_GET['id']}')");
 
     $email_to = $package_sell_data[0]["email"];
-    $subject = 'Email From Google Voice';
+    $subject = 'Email From Best Google Voice';
     $userName = $package_sell_data[0]["f_name"];
     $l = strtolower($userName);
     $u = ucfirst($l);
@@ -50,16 +50,11 @@ if (isset($_GET['id']) && isset($_GET['type'])) {
                         
                             <p style='color:black'>Our team is excited to join you on your journey with us!<br>
                                 We look forward to speaking with you.<br>
-                                If there are any changes to your contact information or availability, please let us know by<br>
+                                If there are any changes to your contact information or availability, please let us know
                                 
                             </p>
-
-                            <p style='text-align:center;'>
-                                <a href='" . $_SERVER['SERVER_NAME'] . "/Voucher?voucher=" . $package_sell_data[0]["code"] . "' class='btn'>View Voucher</a>
-                            </p>
-                            
                             <p style='color:black;font-weight:bold'>We look forward to speaking with you!<br>
-                                Google Voice Team
+                                Best Google Voice Team
                              </p> 
                              <img src='" . $_SERVER['SERVER_NAME'] . "/images/email/contact.png' width='100%' height='auto' alt=''>
                         </div>

@@ -10,12 +10,12 @@ if(isset($_GET['sell_id'])){
     $log = $db_handle->insertQuery("INSERT INTO `activity_log`(`log_text`) VALUES ('{$_SESSION['name']} IP: {$_SERVER['REMOTE_ADDR']} decline this package data id:{$_GET['sell_id']}')");
 
     $email_to = $package_sell_data[0]["email"];
-    $subject = 'Email From Google Voice';
+    $subject = 'Email From Best Google Voice';
     $userName = $package_sell_data[0]["f_name"];
     $l = strtolower($userName);
     $u = ucfirst($l);
 
-    $headers = "From: Google Voice <" . $db_handle->from_email() . ">\r\n";
+    $headers = "From: Best Google Voice <" . $db_handle->from_email() . ">\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
     $messege = "<html>
@@ -30,11 +30,11 @@ if(isset($_GET['sell_id'])){
                         
                             <p style='color:black'>Our team is excited to join you on your journey with us!<br>
                                 We look forward to speaking with you.<br>
-                                If there are any changes to your contact information or availability, please let us know by<br>
+                                If there are any changes to your contact information or availability, please let us know
                             </p>
                             
                             <p style='color:black;font-weight:bold'>We look forward to speaking with you!<br>
-                                Google Voice Team
+                                Best Google Voice Team
                              </p> 
                              <img src='" . $_SERVER['SERVER_NAME'] . "/images/email/contact.png' width='100%' height='auto' alt=''>
                         </div>
