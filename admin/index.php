@@ -54,7 +54,7 @@ if(isset($_SESSION["name"])){
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Login Admin | Best Google Voice</title>
     <meta name="description" content="Some description for the page"/>
-    <link rel="icon" type="image/png" href="../images/icons/favicon.png"/>
+    <link rel="icon" type="image/ico" href="../images/favicon.ico"/>
     <link href="public/css/style.css" rel="stylesheet">
     <link href="public/vendor/toastr/css/toastr.min.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -107,6 +107,6 @@ if(isset($_SESSION["name"])){
 <script src="public/js/custom.min.js" type="text/javascript"></script>
 <script src="public/js/deznav-init.js" type="text/javascript"></script>
 <script src="public/vendor/toastr/js/toastr.min.js" type="text/javascript"></script>
-<script src="public/vendor/toastr/js/toastr-init.js" type="text/javascript"></script>
+<script src="public/js/plugins-init/toastr-init.js" type="text/javascript"></script>
 </body>
 </html>

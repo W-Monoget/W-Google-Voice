@@ -86,7 +86,7 @@ $product_label_4 = '';
                         </h4>
                         <p>
                             24 Hours Reply/Contact<br/>
-                            ▶ Email: ><?php $custom_package = $db_handle->runQuery("SELECT * FROM contact where id=1");
+                            ▶ Email: <?php $custom_package = $db_handle->runQuery("SELECT * FROM contact where id=1");
                             echo $custom_package[0]["email"]; ?><br/>
                             ▶ Skype: <?php echo $custom_package[0]["skype"]; ?>
                         </p>
