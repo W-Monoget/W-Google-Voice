@@ -6,9 +6,9 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 ">
                     <div class="widget">
                         <div class="textwidget ">
-                            <p><img class="mb-4 img-fluid" src="images/logo.png" alt="qloud">
+                            <p><img class="mb-4 img-fluid" src="images/logo.png" alt="Best Google Voice">
                                 <br>
-                                Google Voice provides PVA, Accounts & Much More Services For Different Popular Social
+                                Best Google Voice provides PVA, Accounts & Much More Services For Different Popular Social
                                 Networks Such As Facebook, Instagram, Twitter & Etc.
                             </p>
                         </div>
@@ -29,7 +29,7 @@
                                     </li>
                                     <li>
                                         <a href="tel:+0123456789"><i
-                                                    class="fa fa-phone"></i><span>+12135109004</span></a>
+                                                    class="fa fa-whatsapp"></i><span>+12135109004</span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -49,7 +49,7 @@
             <div class="pt-3 pb-3">
                 <div class="row justify-content-between">
                     <div class="col-lg-12 col-md-12 text-md-center text-center">
-                        <span class="copyright">Copyright 2020 Google Voice All Rights Reserved.</span>
+                        <span class="copyright">Copyright 2023 Best Google Voice All Rights Reserved.</span>
                     </div>
                 </div>
             </div>

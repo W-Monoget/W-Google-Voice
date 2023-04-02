@@ -14,7 +14,7 @@ $db_handle = new DBController();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Home | Google Voice Accounts</title>
+    <title>Home | Best Google Voice Accounts</title>
     <meta name="description"
           content="Buy Google Voice Accounts. It is a telephone number service that provides call forwarding and voicemail services, as well as voice and text messaging."/>
     <meta name="robots" content="index, follow"/>
@@ -50,7 +50,7 @@ $db_handle = new DBController();
     <rs-module id="rev_slider_5_1" style="display:none;" data-version="6.1.8">
         <rs-slides>
             <rs-slide data-key="rs-5" data-title="Slide" data-anim="ei:d;eo:d;s:1000;r:0;t:fade;sl:0;">
-                <img src="revslider/assets/transparent.png" alt="QLOUD" title="qbanner1" width="1600" height="867"
+                <img src="revslider/assets/transparent.png" alt="Best Google Voice" title="qbanner1" width="1600" height="867"
                      data-bg="c:#eff1fe;" data-parallax="off" class="rev-slidebg" data-no-retina>
                 <!--
                                      -->
@@ -91,7 +91,7 @@ $db_handle = new DBController();
                 <button
                         id="slider-5-slide-5-layer-2"
                         class="rs-layer white"
-                        href="#" target="_self" rel="nofollow"
+                        onclick="window.location.href='#package'" target="_self" rel="nofollow"
                         data-type="button"
                         data-rsp_ch="on"
                         data-xy="xo:135px,96px,72px,24px;y:m;yo:163px,115px,14px,-46px;"
@@ -120,7 +120,7 @@ $db_handle = new DBController();
                         data-frame_1="st:2000;sp:1000;sR:2000;"
                         data-frame_999="o:0;st:w;sR:6000;"
                         style="z-index:12;"
-                ><img src="images/google-voice/chrome.png" alt="qloud" class="rotate img-fluid" height="512" width="512"
+                ><img src="images/google-voice/chrome.png" alt="Best Google Voice" class="rotate img-fluid" height="512" width="512"
                       data-no-retina>
                 </rs-layer><!--
 -->                  </rs-slide>
@@ -149,21 +149,24 @@ $db_handle = new DBController();
 <div class="main-content">
 
     <section>
-        <img src="images/others/shape1.png" class="img-fluid shape-right" alt="QLOUD">
+        <img src="images/others/shape1.png" class="img-fluid shape-right" alt="Best Google Voice">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-sm-12 mb-lg-0 mb-4 wow fadeInLeft">
-                    <img src="images/google-voice/3.jpeg" class="img-fluid" alt="qloud">
+                    <img src="images/google-voice/3.jpeg" class="img-fluid" alt="Best Google Voice">
                 </div>
                 <div class="col-lg-6 col-sm-12 wow fadeInRight">
                     <div class=" text-left iq-title-box iq-title-default iq-title-box-2">
                         <div class="iq-title-icon">
                         </div>
-                        <p class="iq-subtitle">1-9 Google Voice Account</p>
+                        <?php
+                        $package_data = $db_handle->runQuery("SELECT * FROM tblproduct where id=1");
+                        ?>
+                        <p class="iq-subtitle"><?php echo $package_data[0]["label_1"]; ?></p>
                         <h2 class="iq-title text-capitalize">
-                            Buy Google Voice Short Package
+                            <?php echo $package_data[0]["name"]; ?>
                         </h2>
-                        <h3>5-45$</h3>
+                        <h3><?php echo (int)$package_data[0]["price"]; ?>-<?php echo (int)$package_data[0]["price"]*9; ?>$</h3>
                         <p class="iq-title-desc pr-lg-5">
                             Google Voice is mainly used by businesses as it offers a wide range of communication tools
                             that supports and enhances business communications. By ensuring an effective communication
@@ -173,7 +176,7 @@ $db_handle = new DBController();
                         </p>
                     </div>
                     <div class="iq-btn-container">
-                        <a class="iq-button iq-btn-round d-inline" href="#">
+                        <a class="iq-button iq-btn-round d-inline" href="Product?code=<?php echo $package_data[0]["code"]; ?>">
                             ORDER
                         </a>
                     </div>
@@ -182,7 +185,7 @@ $db_handle = new DBController();
         </div>
     </section>
 
-    <section class="iq-pricing-section pt-0 wow fadeInUp" data-wow-duration="0.6s">
+    <section class="iq-pricing-section pt-0 wow fadeInUp" data-wow-duration="0.6s" id="package">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -488,7 +491,7 @@ $db_handle = new DBController();
 
     <!-- Icon-box Start -->
     <section class="pt-0 iq-pb-70 iq-data-product">
-        <img src="images/others/shape1.png" class="img-fluid shape" alt="QLOUD">
+        <img src="images/others/shape1.png" class="img-fluid shape" alt="Best Google Voice">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -532,7 +535,7 @@ $db_handle = new DBController();
                             time. Most of the successful businesses have adopted using Google voice in their
                             communication channel. Therefore, the decision to Buy Google voice accounts can highly
                             impact your business communications and enhance your business growth. Buy Google voice
-                            accounts from PVAESHOP and get quality accounts at an affordable price.
+                            accounts from Best Google Voice and get quality accounts at an affordable price.
                         </p>
                     </div>
                 </div>
@@ -542,7 +545,7 @@ $db_handle = new DBController();
 
     <!-- Icon-box Start -->
     <section class="pt-0 iq-pb-70 iq-data-product">
-        <img src="images/others/shape1.png" class="img-fluid shape" alt="QLOUD">
+        <img src="images/others/shape1.png" class="img-fluid shape" alt="Best Google Voice">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -579,7 +582,7 @@ $db_handle = new DBController();
                             your communications within your grasp from one device. Many individuals, businesses,
                             professionals make use of google voice accounts to maintain important communications for
                             both business and personal related works. Thus if you are leaning on buying google voice
-                            accounts then PVAESHOP has got the right package for you!
+                            accounts then Best Google Voice has got the right package for you!
                         </p>
                     </div>
                 </div>
@@ -720,7 +723,7 @@ $db_handle = new DBController();
                         transcription. It is a great communication platform for Businesses, making it the best solution
                         for CRM. If you decide on buying Google voice accounts today to get access to a wide range of
                         features and benefits and enhance your business function & communication channel. Then look no
-                        further, PVAESHOP provides 100% real google voice numbers at an exceptional price.
+                        further, Best Google Voice provides 100% real google voice numbers at an exceptional price.
                     </p>
 
                     <h3 class="iq-title mt-5 mb-3 text-center wow fadeInUp" data-wow-delay="0.2s">Why you should buy
@@ -754,7 +757,7 @@ $db_handle = new DBController();
                         base. Google voice allows you to send transcripts of each voicemail message directly to an
                         official
                         email address. This streamlined process saves up time and is more efficient. Buy Google Voice in
-                        bulk to reach more prospective customers with no hassle, PVAESHOP offers quality accounts for
+                        bulk to reach more prospective customers with no hassle, Best Google Voice offers quality accounts for
                         all
                         your business needs.</p>
 
@@ -804,7 +807,7 @@ $db_handle = new DBController();
                         to worry about missing any important business calls.
                     </p>
 
-                    <h3 class="iq-title mt-5 mb-3 wow fadeInUp" data-wow-delay="0.2s">Why choose PVAESHOP to buy Google
+                    <h3 class="iq-title mt-5 mb-3 wow fadeInUp" data-wow-delay="0.2s">Why choose Best Google Voice to buy Google
                         voice accounts?</h3>
                     <ul class="wow fadeInUp" data-wow-delay="0.2s">
                         <li>

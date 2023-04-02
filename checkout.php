@@ -15,7 +15,7 @@ if (!isset($_SESSION["cart_item"])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Checkout | Google Voice Accounts</title>
+    <title>Checkout | Best Google Voice Accounts</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico"/>

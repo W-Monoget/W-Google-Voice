@@ -67,12 +67,12 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
 
 
         $email_to = $email;
-        $subject = 'Email From Google Voice';
+        $subject = 'Email From Best Google Voice';
         $userName = $f_name;
         $l = strtolower($userName);
         $u = ucfirst($l);
 
-        $headers = "From: Google Voice <" . $db_handle->from_email() . ">\r\n";
+        $headers = "From: Best Google Voice <" . $db_handle->from_email() . ">\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
         $messege = "<html>
@@ -88,11 +88,11 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
                             <p style='color:black'>Your payment currently on pending.<br>
                                 Our team is excited to join you on your journey with us!<br>
                                 We look forward to speaking with you.<br>
-                                If there are any changes to your contact information or availability, please let us know by
+                                If there are any changes to your contact information or availability, please let us know.
                             </p>
                             
                             <p style='color:black;font-weight:bold'>We look forward to speaking with you!<br>
-                                Google Voice Team
+                                Best  Voice Team
                              </p> 
                              <img src='" . $_SERVER['SERVER_NAME'] . "/images/email/contact.png' width='100%' height='auto' alt=''>
                         </div>

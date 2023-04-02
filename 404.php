@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>404 | Google Voice Accounts</title>
+    <title>404 | Best Google Voice Accounts</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico"/>
     <?php require_once('include/css.php'); ?>
