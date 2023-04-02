@@ -22,14 +22,15 @@
                             <div class="col-sm-12">
                                 <ul class="iq-contact">
                                     <li>
-                                        <a><i class="fa fa-skype"></i><span>live:.cid.3e346e647754bcb7</span></a>
+                                        <a><i class="fa fa-skype"></i><span><?php $custom_package = $db_handle->runQuery("SELECT * FROM contact where id=1");
+                                                echo $custom_package[0]["skype"]; ?></span></a>
                                     </li>
                                     <li>
-                                        <a href="mailto:support@iqnonicthemes.com"><i class="fa fa-envelope"></i><span>test@gmail.com</span></a>
+                                        <a href="mailto:<?php echo $custom_package[0]["email"]; ?>"><i class="fa fa-envelope"></i><span><?php echo $custom_package[0]["email"]; ?></span></a>
                                     </li>
                                     <li>
-                                        <a href="tel:+0123456789"><i
-                                                    class="fa fa-whatsapp"></i><span>+12135109004</span></a>
+                                        <a href="tel:<?php echo $custom_package[0]["number"]; ?>"><i
+                                                    class="fa fa-whatsapp"></i><span><?php echo $custom_package[0]["number"]; ?></span></a>
                                     </li>
                                 </ul>
                             </div>

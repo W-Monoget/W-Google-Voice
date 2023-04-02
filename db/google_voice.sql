@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2023 at 12:51 PM
+-- Generation Time: Apr 02, 2023 at 07:28 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -68,27 +68,44 @@ CREATE TABLE `billing_details` (
   `id` int(11) NOT NULL,
   `f_name` varchar(15) NOT NULL,
   `l_name` varchar(15) NOT NULL,
-  `code` varchar(15) NOT NULL,
   `email` varchar(30) NOT NULL,
   `phone_number` varchar(15) NOT NULL,
+  `country` varchar(100) NOT NULL,
   `address` varchar(30) NOT NULL,
   `city` varchar(15) NOT NULL,
   `zip_code` varchar(10) NOT NULL,
   `state` varchar(5) NOT NULL,
-  `id_name` varchar(15) NOT NULL,
-  `id_value` varchar(20) NOT NULL,
-  `preferred_schedule` varchar(1000) NOT NULL,
   `payment_type` varchar(20) NOT NULL DEFAULT 'Card',
   `transaction_number` varchar(100) NOT NULL,
   `transaction_image` varchar(200) NOT NULL,
-  `attach_files` varchar(500) NOT NULL,
-  `credit_card_num` varchar(20) NOT NULL,
-  `exp_month` varchar(15) NOT NULL,
-  `exp_year` varchar(10) NOT NULL,
-  `cvv` varchar(5) NOT NULL,
   `approve` int(11) NOT NULL DEFAULT 3,
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL,
+  `btc_address` varchar(100) NOT NULL,
+  `usdt_address` varchar(100) NOT NULL,
+  `ltc_address` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `number` varchar(100) NOT NULL,
+  `skype` varchar(100) NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `btc_address`, `usdt_address`, `ltc_address`, `email`, `number`, `skype`, `image`, `updated_at`) VALUES
+(1, 'test', 'test', 'test', 'test@test.com', '00000', 'live.cid:test', 'images/email/contact.png', '2023-04-02 17:27:25');
 
 -- --------------------------------------------------------
 
@@ -161,6 +178,12 @@ ALTER TABLE `billing_details`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `invoice_details`
 --
 ALTER TABLE `invoice_details`
@@ -193,6 +216,12 @@ ALTER TABLE `admin_login`
 --
 ALTER TABLE `billing_details`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `invoice_details`

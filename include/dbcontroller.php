@@ -4,16 +4,16 @@ class DBController {
     private $user = "root";
     private $password = "";
     private $database = "google_voice";
-    private $from_email='noreply@voiceofgoogle.com';
+    private $from_email='noreply@bestgv.com';
     private $notification_email='monoget1@gmail.com';
     private $conn;
 
     function __construct() {
-        if($_SERVER['SERVER_NAME']=="voiceofgoogle.com"||$_SERVER['SERVER_NAME']=="www.voiceofgoogle.com"){
-            $this->host = "localhost";
-            $this->user = "upgggnkkroycy";
-            $this->password = "3e4bt%D1&2%o";
-            $this->database = "dbqgbcctouhijk";
+        if($_SERVER['SERVER_NAME']=="bestgv.com"||$_SERVER['SERVER_NAME']=="www.bestgv.com"){
+            $this->host = "server107";
+            $this->user = "bestgrcc_bestgvu";
+            $this->password = "lO~WDvcfU{KA";
+            $this->database = "bestgrcc_bestgvd";
         }
 
         $this->conn = $this->connectDB();

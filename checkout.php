@@ -442,12 +442,13 @@ if (!isset($_SESSION["cart_item"])) {
     }
 
     function viewInfo(value) {
+        <?php $custom_package = $db_handle->runQuery("SELECT * FROM contact where id=1"); ?>
         if (value == 1) {
-            document.getElementById("btc_address").innerHTML = "";
+            document.getElementById("btc_address").innerHTML = "<?php echo $custom_package[0]["btc_address"]; ?>";
         } else if (value == 2) {
-            document.getElementById("usdt_address").innerHTML = "";
+            document.getElementById("usdt_address").innerHTML = "<?php echo $custom_package[0]["usdt_address"]; ?>";
         } else if (value == 3) {
-            document.getElementById("ltc_address").innerHTML = "";
+            document.getElementById("ltc_address").innerHTML = "<?php echo $custom_package[0]["ltc_address"]; ?>";
         }
     }
 </script>

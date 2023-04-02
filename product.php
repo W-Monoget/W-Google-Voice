@@ -86,8 +86,9 @@ $product_label_4 = '';
                         </h4>
                         <p>
                             24 Hours Reply/Contact<br/>
-                            ▶ Email: bestgv@gmail.com<br/>
-                            ▶ Skype: live:.cid.3e346e647754bcb7
+                            ▶ Email: ><?php $custom_package = $db_handle->runQuery("SELECT * FROM contact where id=1");
+                            echo $custom_package[0]["email"]; ?><br/>
+                            ▶ Skype: <?php echo $custom_package[0]["skype"]; ?>
                         </p>
                     </div>
                     <form method="post"
