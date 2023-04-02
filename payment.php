@@ -58,10 +58,9 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
         $name = $item["name"];
         $item_price = $item["quantity"] * $item["price"];
         $quantity = $item["quantity"];
-        $place = $item["place"];
         $unit_price = $item["price"];
 
-        $billing_id = $db_handle->insertQuery("INSERT INTO `invoice_details`(`billing_id`, `product_name`,`place`, `product_quantity`, `product_unit_price`, `product_total_price`) VALUES ('$id','$name','$place','$quantity','$unit_price','$item_price')");
+        $billing_id = $db_handle->insertQuery("INSERT INTO `invoice_details`(`billing_id`, `product_name`, `product_quantity`, `product_unit_price`, `product_total_price`) VALUES ('$id','$name','$quantity','$unit_price','$item_price')");
     }
     unset($_SESSION["cart_item"]);
 
@@ -180,10 +179,9 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
         $name = $item["name"];
         $item_price = $item["quantity"] * $item["price"];
         $quantity = $item["quantity"];
-        $place = $item["place"];
         $unit_price = $item["price"];
 
-        $billing_id = $db_handle->insertQuery("INSERT INTO `invoice_details`(`billing_id`, `product_name`,`place`, `product_quantity`, `product_unit_price`, `product_total_price`) VALUES ('$id','$name','$place','$quantity','$unit_price','$item_price')");
+        $billing_id = $db_handle->insertQuery("INSERT INTO `invoice_details`(`billing_id`, `product_name`, `product_quantity`, `product_unit_price`, `product_total_price`) VALUES ('$id','$name','$quantity','$unit_price','$item_price')");
     }
     unset($_SESSION["cart_item"]);
 
@@ -301,10 +299,9 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
         $name = $item["name"];
         $item_price = $item["quantity"] * $item["price"];
         $quantity = $item["quantity"];
-        $place = $item["place"];
         $unit_price = $item["price"];
 
-        $billing_id = $db_handle->insertQuery("INSERT INTO `invoice_details`(`billing_id`, `product_name`,`place`, `product_quantity`, `product_unit_price`, `product_total_price`) VALUES ('$id','$name','$place','$quantity','$unit_price','$item_price')");
+        $billing_id = $db_handle->insertQuery("INSERT INTO `invoice_details`(`billing_id`, `product_name`, `product_quantity`, `product_unit_price`, `product_total_price`) VALUES ('$id','$name','$quantity','$unit_price','$item_price')");
     }
     unset($_SESSION["cart_item"]);
 
