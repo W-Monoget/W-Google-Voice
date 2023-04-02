@@ -269,12 +269,19 @@ if (!isset($_SESSION["cart_item"])) {
                                     </div>
                                 </div>
                             </div>
+                            <?php $custom_package = $db_handle->runQuery("SELECT * FROM contact where id=1"); ?>
                             <div class="contact-form" id="btc">
                                 <h3>BTC</h3>
-                                <p>Please pay in this address <span class="text-primary" id="btc_address"
-                                                                    onclick="viewInfo(1);">click here</span> for address
-                                    from your
-                                    wallet and share transaction screenshot for approve your order.</p>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <p>Please pay in this address <span class="text-primary" id="btc_address"><?php echo $custom_package[0]["btc_address"]; ?></span> for address
+                                            from your
+                                            wallet and share transaction screenshot for approve your order.</p>
+                                    </div>
+                                    <div class="col-3">
+                                        <img src="<?php echo $custom_package[0]["btc_qr"]; ?>" class="img-fluid" alt=""/>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="form-group col-md-12">
                                         <label>Transaction Number <i class="text-danger">*</i></label>
@@ -316,10 +323,16 @@ if (!isset($_SESSION["cart_item"])) {
                             </div>
                             <div class="contact-form" id="usdt" style="display: none;">
                                 <h3>USDT</h3>
-                                <p>Please pay in this address <span class="text-primary" id="usdt_address"
-                                                                  onclick="viewInfo(2);">click here</span> for address
-                                    from your
-                                    wallet and share transaction screenshot for approve your order.</p>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <p>Please pay in this address <span class="text-primary" id="usdt_address"><?php echo $custom_package[0]["usdt_address"]; ?></span> for address
+                                            from your
+                                            wallet and share transaction screenshot for approve your order.</p>
+                                    </div>
+                                    <div class="col-3">
+                                        <img src="<?php echo $custom_package[0]["usdt_qr"]; ?>" class="img-fluid" alt=""/>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="form-group col-md-12">
                                         <label>Transaction Number <i class="text-danger">*</i></label>
@@ -361,10 +374,15 @@ if (!isset($_SESSION["cart_item"])) {
                             </div>
                             <div class="contact-form" id="ltc" style="display: none;">
                                 <h3>LTC</h3>
-                                <p>Please pay in address <span class="text-primary" id="ltc_address"
-                                                                         onclick="viewInfo(3);">click here</span> for address
-                                    from your
-                                    wallet and share transaction screenshot for approve your order..</p>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <p>Please pay in address <span class="text-primary" id="ltc_address"><?php echo $custom_package[0]["ltc_address"]; ?></span> for address
+                                            from your wallet and share transaction screenshot for approve your order.</p>
+                                    </div>
+                                    <div class="col-3">
+                                        <img src="<?php echo $custom_package[0]["ltc_qr"]; ?>" class="img-fluid" alt=""/>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="form-group col-md-12">
                                         <label>Transaction Number <i class="text-danger">*</i></label>
@@ -438,17 +456,6 @@ if (!isset($_SESSION["cart_item"])) {
             $(".btc-class").removeAttr('required');
             $(".usdt-class").removeAttr('required');
             $(".ltc-class").attr('required', '');
-        }
-    }
-
-    function viewInfo(value) {
-        <?php $custom_package = $db_handle->runQuery("SELECT * FROM contact where id=1"); ?>
-        if (value == 1) {
-            document.getElementById("btc_address").innerHTML = "<?php echo $custom_package[0]["btc_address"]; ?>";
-        } else if (value == 2) {
-            document.getElementById("usdt_address").innerHTML = "<?php echo $custom_package[0]["usdt_address"]; ?>";
-        } else if (value == 3) {
-            document.getElementById("ltc_address").innerHTML = "<?php echo $custom_package[0]["ltc_address"]; ?>";
         }
     }
 </script>

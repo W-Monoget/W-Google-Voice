@@ -15,12 +15,12 @@ console.log(x);
 if (x == 1) {
     eraseCookie('alert');
     Swal.fire({
-        confirmButtonColor: '#664E88',
+        confirmButtonColor: '#1d8a3b',
         title: 'Thank you for your request!',
         text: 'We will get back to you shortly.',
-        imageUrl: 'https://test.skdrivingschoolny.com/images/icons/logo.png',
-        imageWidth: 400,
-        imageHeight: 100,
+        imageUrl: 'https://bestgv.com/images/logo.png',
+        imageWidth: 150,
+        imageHeight: 69,
         imageAlt: 'Custom image',
     }).then(function() {
         window.location = "/";

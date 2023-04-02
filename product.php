@@ -21,6 +21,22 @@ $product_label_4 = '';
     <link rel="shortcut icon" href="images/favicon.ico"/>
 
     <?php require_once('include/css.php'); ?>
+    <style>
+        .icon-shape {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .icon-sm {
+            width: 3rem;
+            height: 3rem;
+            background: #d5d5d5;
+            font-size: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -96,11 +112,17 @@ $product_label_4 = '';
                           id="add-cart">
                         <input type="hidden" name="code" id="code" value="<?php echo $_GET['code']; ?>"/>
                         <div class="form-row">
-                            <input type="number" class="form-control mb-3" name="quantity" id="quantity" value="1" min="1"
-                                   style="background: white;color: #0b0b0b;width: 150px" required>
+                            <div class="input-group w-auto align-items-center">
+                                <input type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 " data-field="quantity">
+                                <input type="number" step="1" value="1" name="quantity" class="quantity-field border-0 text-center w-25" style="background: white;color: #0b0b0b;width: 150px" required>
+                                <input type="button" value="+" class="mx-1 button-plus border rounded-circle icon-shape icon-sm" data-field="quantity">
+                            </div>
                         </div>
-                        <div class="iq-btn-container mt-3">
-                            <input type="submit" value="Add To Cart" class="iq-button iq-btn-round d-inline"/>
+                        <div class="form-row mt-3">
+                            <input type="submit" value="Add To Cart" class="iq-button iq-btn-round d-inline mr-2"/>
+                        </div>
+                        <div class="form-row mt-3">
+                            <button type="button" onclick="window.location.href='Checkout'" class="iq-button iq-btn-round d-inline ml-2 w-100 text-center">PAY NOW</button>
                         </div>
                     </form>
                 </div>
@@ -298,5 +320,42 @@ $product_label_4 = '';
 <?php require_once('include/footer.php'); ?>
 
 <?php require_once('include/js.php'); ?>
+
+<script>
+    function incrementValue(e) {
+        e.preventDefault();
+        var fieldName = $(e.target).data('field');
+        var parent = $(e.target).closest('div');
+        var currentVal = parseInt(parent.find('input[name=' + fieldName + ']').val(), 10);
+
+        if (!isNaN(currentVal)) {
+            parent.find('input[name=' + fieldName + ']').val(currentVal + 1);
+        } else {
+            parent.find('input[name=' + fieldName + ']').val(0);
+        }
+    }
+
+    function decrementValue(e) {
+        e.preventDefault();
+        var fieldName = $(e.target).data('field');
+        var parent = $(e.target).closest('div');
+        var currentVal = parseInt(parent.find('input[name=' + fieldName + ']').val(), 10);
+
+        if (!isNaN(currentVal) && currentVal > 0) {
+            parent.find('input[name=' + fieldName + ']').val(currentVal - 1);
+        } else {
+            parent.find('input[name=' + fieldName + ']').val(0);
+        }
+    }
+
+    $('.input-group').on('click', '.button-plus', function(e) {
+        incrementValue(e);
+    });
+
+    $('.input-group').on('click', '.button-minus', function(e) {
+        decrementValue(e);
+    });
+
+</script>
 </body>
 </html>

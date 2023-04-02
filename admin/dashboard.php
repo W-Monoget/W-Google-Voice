@@ -148,16 +148,52 @@ $db_handle = new DBController();
                                                    echo $custom_package[0]["btc_address"]; ?>" required/>
                                         </div>
                                         <div class="form-group col-md-12">
+                                            <label>BTC QR CODE <a href="../<?php echo $custom_package[0]["btc_qr"]; ?>" target="_blank">(Preview Previous QR)</a></label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Upload</span>
+                                                </div>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" name="btc_qr">
+                                                    <label class="custom-file-label">Choose file</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12">
                                             <label>USDT Address</label>
                                             <input type="text" class="form-control" name="usdt_address"
                                                    placeholder="usdt address.."
                                                    value="<?php echo $custom_package[0]["usdt_address"]; ?>" required/>
                                         </div>
                                         <div class="form-group col-md-12">
+                                            <label>USDT QR CODE <a href="../<?php echo $custom_package[0]["usdt_qr"]; ?>" target="_blank">(Preview Previous QR)</a></label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Upload</span>
+                                                </div>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" name="usdt_qr">
+                                                    <label class="custom-file-label">Choose file</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12">
                                             <label>LTC Address</label>
                                             <input type="text" class="form-control" name="ltc_address"
                                                    placeholder="ltc address..."
                                                    value="<?php echo $custom_package[0]["ltc_address"]; ?>" required/>
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label>LTC QR CODE <a href="../<?php echo $custom_package[0]["ltc_qr"]; ?>" target="_blank">(Preview Previous QR)</a></label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Upload</span>
+                                                </div>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" name="ltc_qr">
+                                                    <label class="custom-file-label">Choose file</label>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>Email</label>

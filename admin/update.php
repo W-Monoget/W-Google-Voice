@@ -81,12 +81,87 @@ if(isset($_POST['edit_contact_data'])){
         }
     }
 
+    $btc_qr='';
+
+    if (!empty($_FILES['btc_qr']['name'])){
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber."_" . $_FILES['btc_qr']['name'];
+        $file_size = $_FILES['btc_qr']['size'];
+        $file_tmp = $_FILES['btc_qr']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if (
+            $file_type != "jpg" && $file_type != "png" && $file_type != "jpeg"
+            && $file_type != "gif"
+        ) {
+            $attach_files = '';
+        } else {
+
+            $data = $db_handle->runQuery("select * FROM `contact` WHERE id=1");
+            unlink('../'.$data[0]['btc_qr']);
+
+            move_uploaded_file($file_tmp, "../images/qrcode/" .$file_name);
+            $btc_qr = "images/qrcode/" . $file_name;
+            $query.=",`btc_qr`=".$btc_qr;
+        }
+    }
+
+    $usdt_qr='';
+
+    if (!empty($_FILES['usdt_qr']['name'])){
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber."_" . $_FILES['usdt_qr']['name'];
+        $file_size = $_FILES['usdt_qr']['size'];
+        $file_tmp = $_FILES['usdt_qr']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if (
+            $file_type != "jpg" && $file_type != "png" && $file_type != "jpeg"
+            && $file_type != "gif"
+        ) {
+            $attach_files = '';
+        } else {
+
+            $data = $db_handle->runQuery("select * FROM `contact` WHERE id=1");
+            unlink('../'.$data[0]['usdt_qr']);
+
+            move_uploaded_file($file_tmp, "../images/qrcode/" .$file_name);
+            $usdt_qr = "images/qrcode/" . $file_name;
+            $query.=",`usdt_qr`=".$usdt_qr;
+        }
+    }
+
+    $ltc_qr='';
+
+    if (!empty($_FILES['ltc_qr']['name'])){
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber."_" . $_FILES['ltc_qr']['name'];
+        $file_size = $_FILES['ltc_qr']['size'];
+        $file_tmp = $_FILES['ltc_qr']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if (
+            $file_type != "jpg" && $file_type != "png" && $file_type != "jpeg"
+            && $file_type != "gif"
+        ) {
+            $attach_files = '';
+        } else {
+
+            $data = $db_handle->runQuery("select * FROM `contact` WHERE id=1");
+            unlink('../'.$data[0]['usdt_qr']);
+
+            move_uploaded_file($file_tmp, "../images/qrcode/" .$file_name);
+            $ltc_qr = "images/qrcode/" . $file_name;
+            $query.=",`ltc_qr`=".$ltc_qr;
+        }
+    }
+
     $update= $db_handle->insertQuery("update contact set btc_address='$btc_address',
                       usdt_address='$usdt_address',
                       ltc_address='$ltc_address',
                       email='$email',
                       number='$number',
-                      skype='$skype' where id=1");
+                      skype='$skype'".$query." where id=1");
 
     echo "<script>
             document.cookie = 'alert = 1;';

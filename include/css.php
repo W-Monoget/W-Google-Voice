@@ -49,6 +49,23 @@
             transform: rotate(359deg);
         }
     }
+    button.toast-close-button{
+        width: 30px;
+        height: 30px;
+        position: relative;
+        right: -.3em;
+        top: -.3em;
+        float: right;
+        font-size: 20px;
+        font-weight: 700;
+        color: #FFF;
+        -webkit-text-shadow: 0 1px 0 #fff;
+        text-shadow: 0 1px 0 #fff;
+        opacity: .8;
+        -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+        filter: alpha(opacity=80);
+        line-height: 1
+    }
 </style>
 
 
