@@ -149,8 +149,13 @@ if (!isset($_SESSION["cart_item"])) {
                                         <label>Country / Region <span class="text-danger">*</span></label>
                                         <select class="form-control" name="country" required>
                                             <option>Please Select</option>
+                                            <option value="Canada">Canada</option>
+                                            <option value="China">China</option>
+                                            <option value="Nigeria">Nigeria</option>
+                                            <option value="Russia">Russia</option>
                                             <option value="United Kingdom (UK)">United Kingdom (UK)</option>
                                             <option value="United States (US)">United States (US)</option>
+                                            <option value="Vietnam">Vietnam</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-12">
@@ -274,7 +279,7 @@ if (!isset($_SESSION["cart_item"])) {
                                 <h3>BTC</h3>
                                 <div class="row">
                                     <div class="col-9">
-                                        <p>Please pay in this address <span class="text-primary" id="btc_address"><?php echo $custom_package[0]["btc_address"]; ?></span> for address
+                                        <p>Please pay in this address <span class="text-primary" id="btc_address"><?php echo $custom_package[0]["btc_address"]; ?></span> 
                                             from your
                                             wallet and share transaction screenshot for approve your order.</p>
                                     </div>
@@ -325,7 +330,7 @@ if (!isset($_SESSION["cart_item"])) {
                                 <h3>USDT</h3>
                                 <div class="row">
                                     <div class="col-9">
-                                        <p>Please pay in this address <span class="text-primary" id="usdt_address"><?php echo $custom_package[0]["usdt_address"]; ?></span> for address
+                                        <p>Please pay in this address <span class="text-primary" id="usdt_address"><?php echo $custom_package[0]["usdt_address"]; ?></span> 
                                             from your
                                             wallet and share transaction screenshot for approve your order.</p>
                                     </div>
@@ -376,7 +381,7 @@ if (!isset($_SESSION["cart_item"])) {
                                 <h3>LTC</h3>
                                 <div class="row">
                                     <div class="col-9">
-                                        <p>Please pay in address <span class="text-primary" id="ltc_address"><?php echo $custom_package[0]["ltc_address"]; ?></span> for address
+                                        <p>Please pay in address <span class="text-primary" id="ltc_address"><?php echo $custom_package[0]["ltc_address"]; ?></span> 
                                             from your wallet and share transaction screenshot for approve your order.</p>
                                     </div>
                                     <div class="col-3">

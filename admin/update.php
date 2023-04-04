@@ -102,7 +102,7 @@ if(isset($_POST['edit_contact_data'])){
 
             move_uploaded_file($file_tmp, "../images/qrcode/" .$file_name);
             $btc_qr = "images/qrcode/" . $file_name;
-            $query.=",`btc_qr`=".$btc_qr;
+            $query.=",`btc_qr`='".$btc_qr."'";
         }
     }
 
@@ -127,7 +127,7 @@ if(isset($_POST['edit_contact_data'])){
 
             move_uploaded_file($file_tmp, "../images/qrcode/" .$file_name);
             $usdt_qr = "images/qrcode/" . $file_name;
-            $query.=",`usdt_qr`=".$usdt_qr;
+            $query.=",`usdt_qr`='".$usdt_qr."'";
         }
     }
 
@@ -148,11 +148,11 @@ if(isset($_POST['edit_contact_data'])){
         } else {
 
             $data = $db_handle->runQuery("select * FROM `contact` WHERE id=1");
-            unlink('../'.$data[0]['usdt_qr']);
+            unlink('../'.$data[0]['ltc_qr']);
 
             move_uploaded_file($file_tmp, "../images/qrcode/" .$file_name);
             $ltc_qr = "images/qrcode/" . $file_name;
-            $query.=",`ltc_qr`=".$ltc_qr;
+            $query.=",`ltc_qr`='".$ltc_qr."'";
         }
     }
 

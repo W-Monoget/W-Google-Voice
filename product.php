@@ -7,6 +7,12 @@ $product_label_1 = '';
 $product_label_2 = '';
 $product_label_3 = '';
 $product_label_4 = '';
+
+if(isset($_GET['action'])&&isset($_GET['code'])){
+    echo "<script>
+                window.location.href='Product?code=".$_GET['code']."';
+                </script>";
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -108,7 +114,7 @@ $product_label_4 = '';
                         </p>
                     </div>
                     <form method="post"
-                          action="product.php?action=add&code=<?php echo $_GET['code']; ?>"
+                          action="Product?action=add&code=<?php echo $_GET['code']; ?>"
                           id="add-cart">
                         <input type="hidden" name="code" id="code" value="<?php echo $_GET['code']; ?>"/>
                         <div class="form-row">
@@ -122,7 +128,15 @@ $product_label_4 = '';
                             <input type="submit" value="Add To Cart" class="iq-button iq-btn-round d-inline mr-2"/>
                         </div>
                         <div class="form-row mt-3">
-                            <button type="button" onclick="window.location.href='Checkout'" class="iq-button iq-btn-round d-inline ml-2 w-100 text-center">PAY NOW</button>
+                            <button type="button" onclick="window.location.href='Checkout'" class="iq-button iq-btn-round d-inline ml-2 w-100 text-center"
+                                <?php if($total_quantity==0){
+                                    ?>
+                                        style="background: #007BFC !important;box-shadow: unset;"
+                                    disabled
+                                    <?php
+                                } ?>>
+                                PAY NOW
+                            </button>
                         </div>
                     </form>
                 </div>
