@@ -25,7 +25,7 @@ if (!empty($_GET["action"])) {
                     $_SESSION["cart_item"] = $itemArray;
                 }
 
-                if(isset($_GET['rush_code'])){
+                if (isset($_GET['rush_code'])) {
                     $productByCode = $db_handle->runQuery("SELECT * FROM tblproduct WHERE code='" . $_GET["rush_code"] . "'");
                     $itemArray = array($productByCode[0]["code"] => array('name' => $productByCode[0]["name"], 'code' => $productByCode[0]["code"], 'quantity' => $_POST["quantity"], 'price' => $productByCode[0]["price"]));
 
@@ -82,12 +82,12 @@ if (isset($_SESSION["cart_item"])) {
 if (isset($_GET["code"])) {
     $product = $db_handle->runQuery("SELECT * FROM tblproduct WHERE code='" . $_GET["code"] . "'");
 
-    $product_name=$product[0]["name"];
-    $product_price=$product[0]["price"];
-    $product_label_1=$product[0]["label_1"];
-    $product_label_2=$product[0]["label_2"];
-    $product_label_3=$product[0]["label_3"];
-    $product_label_4=$product[0]["label_4"];
+    $product_name = $product[0]["name"];
+    $product_price = $product[0]["price"];
+    $product_label_1 = $product[0]["label_1"];
+    $product_label_2 = $product[0]["label_2"];
+    $product_label_3 = $product[0]["label_3"];
+    $product_label_4 = $product[0]["label_4"];
 }
 ?>
 <!-- Header -->
@@ -103,16 +103,45 @@ if (isset($_GET["code"])) {
                         <i class="fa fa-shopping-cart pb-1 text-white"></i> &nbsp; Cart
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <h4 class="navbar-nav mr-auto w-100 justify-content-center">
+                        <h5 class="navbar-nav mr-auto w-100 justify-content-center">
                             PROVIDING HIGH QUALITY PVA & SOCIAL MEDIA SERVICES
-                        </h4>
+                        </h5>
                     </div>
                     <div class="sub-main">
-                        <ul>
-                            <li class="d-inline">
-                                <a href="Cart">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <?php if (!isset($_SESSION['user_id'])) {
+                                    ?>
+                                    <a class="nav-link" href="Login">
+                                        <button class="white">
+                                            <i class="fa fa-user pb-1 text-white"></i> &nbsp; Login
+                                        </button>
+                                    </a>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button class="white">
+                                            <?php
+                                            echo $_SESSION['name'];
+                                            ?>  <i class="fa fa-arrow-down pb-1 text-white"></i>
+                                        </button>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">Profile</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Logout</a>
+                                    </div>
+                                    <?php
+                                }
+                                ?>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Cart">
                                     <button class="white">
-                                        <i class="fa fa-shopping-cart pb-1 text-white"></i> &nbsp; Cart (<?php echo $total_quantity; ?>)
+                                        <i class="fa fa-shopping-cart pb-1 text-white"></i> &nbsp; Cart
+                                        (<?php echo $total_quantity; ?>)
                                     </button>
                                 </a>
                             </li>

@@ -2,8 +2,27 @@
 session_start();
 require_once("include/dbcontroller.php");
 $db_handle = new DBController();
+$user_id = 0;
 
-if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+}
+
+
+function randomPassword()
+{
+    $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+    $pass = array(); //remember to declare $pass as an array
+    $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+    for ($i = 0; $i < 8; $i++) {
+        $n = rand(0, $alphaLength);
+        $pass[] = $alphabet[$n];
+    }
+    return implode($pass); //turn the array into a string
+}
+
+
+if (isset($_SESSION["cart_item"]) && isset($_POST['btc_submit'])) {
 
     $f_name = $db_handle->checkValue($_POST['f_name']);
     $l_name = $db_handle->checkValue($_POST['l_name']);
@@ -19,12 +38,14 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
 
     $payment_type = 'BTC';
 
+    $password = randomPassword();
+
     $transaction_num_btc = $db_handle->checkValue($_POST['transaction_num_btc']);
 
-    $payment_proof_btc='';
-    if (!empty($_FILES['payment_proof_btc']['name'])){
+    $payment_proof_btc = '';
+    if (!empty($_FILES['payment_proof_btc']['name'])) {
         $RandomAccountNumber = mt_rand(1, 99999);
-        $file_name = $RandomAccountNumber."_" . $_FILES['payment_proof_btc']['name'];
+        $file_name = $RandomAccountNumber . "_" . $_FILES['payment_proof_btc']['name'];
         $file_size = $_FILES['payment_proof_btc']['size'];
         $file_tmp = $_FILES['payment_proof_btc']['tmp_name'];
 
@@ -35,18 +56,26 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
         ) {
             $attach_files = '';
         } else {
-            move_uploaded_file($file_tmp, "images/proof/btc/" .$file_name);
+            move_uploaded_file($file_tmp, "images/proof/btc/" . $file_name);
             $payment_proof_btc = "images/proof/btc/" . $file_name;
         }
     } else {
-        $payment_proof_btc='';
+        $payment_proof_btc = '';
+    }
+
+    $login_info = '';
+    if (isset($_POST['btc_login']) && $user_id == 0) {
+        $select = $db_handle->numRows("SELECT * FROM `user` WHERE email='$email'");
+        if ($select == 0) {
+            $user = $db_handle->insertQuery("INSERT INTO `user`(`f_name`, `l_name`, `email`, `password`, `phone_number`, `country`, `address`, `city`, `zip_code`) VALUES ('$f_name','$l_name','$email','$password','$phone_number','$country','$address','$city','$zip_code')");
+
+            $login_info .= "<h3 style='color:black'>Your login email and password [$email] [$password]. Save this info for login.</h3>";
+        }
     }
 
 
-    $billing_insert = $db_handle->insertQuery("INSERT INTO `billing_details`(`f_name`, `l_name`, `email`, `phone_number`,
-                              `country`, `address`, `city`, `zip_code`, `payment_type`, `transaction_number`, `transaction_image`) 
-                                VALUES('$f_name','$l_name','$email','$phone_number','$country','$address','$city','$zip_code',
-                                       '$payment_type','$transaction_num_btc','$payment_proof_btc')");
+    $billing_insert = $db_handle->insertQuery("INSERT INTO `billing_details`(`f_name`, `l_name`, `email`, `user_id`, `phone_number`,`country`, `address`, `city`, `zip_code`, `payment_type`, `transaction_number`, `transaction_image`) 
+VALUES('$f_name','$l_name','$email','$user_id','$phone_number','$country','$address','$city','$zip_code','$payment_type','$transaction_num_btc','$payment_proof_btc')");
 
     $billing_id = $db_handle->runQuery("SELECT * FROM billing_details order by id desc limit 1");
 
@@ -65,16 +94,16 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
     unset($_SESSION["cart_item"]);
 
 
-        $email_to = $email;
-        $subject = 'Email From Best Google Voice';
-        $userName = $f_name;
-        $l = strtolower($userName);
-        $u = ucfirst($l);
+    $email_to = $email;
+    $subject = 'Email From Best Google Voice';
+    $userName = $f_name;
+    $l = strtolower($userName);
+    $u = ucfirst($l);
 
-        $headers = "From: Best Google Voice <" . $db_handle->from_email() . ">\r\n";
-        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+    $headers = "From: Best Google Voice <" . $db_handle->from_email() . ">\r\n";
+    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-        $messege = "<html>
+    $messege = "<html>
                     <body style='background-color: #eee; font-size: 16px;'>
                         <div style='max-width: 600px; min-width: 200px; background-color: #fff; padding: 20px; margin: auto;'>
                         
@@ -83,7 +112,7 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
                             <h3 style='color:black'>Hi $u!</h3>
                                 
                             <p style='text-align: center;color:green;font-weight:bold'>Thank you for purchasing our package</p>   
-                        
+                            $login_info
                             <p style='color:black'>Your payment currently on pending.<br>
                                 Our team is excited to join you on your journey with us!<br>
                                 We look forward to speaking with you.<br>
@@ -91,7 +120,7 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
                             </p>
                             
                             <p style='color:black;font-weight:bold'>We look forward to speaking with you!<br>
-                                Best  Voice Team
+                                Best Google Voice Team
                              </p> 
                              <img src='" . $_SERVER['SERVER_NAME'] . "/images/email/contact.png' width='100%' height='auto' alt=''>
                         </div>
@@ -113,18 +142,18 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
                 </html>
                 ";
 
-        if (mail($email_to, $subject, $messege, $headers)&&mail($db_handle->notify_email(), $subject, $notify_messege, $headers)) {
-            echo "<script>
+    if (mail($email_to, $subject, $messege, $headers) && mail($db_handle->notify_email(), $subject, $notify_messege, $headers) && $billing_insert) {
+        echo "<script>
                 document.cookie = 'alert = 1;';
                 window.location.href='/';
                 </script>";
-        }else{
-            echo "<script>
+    } else {
+        echo "<script>
                 document.cookie = 'alert = 2;';
                 window.location.href='/';
                 </script>";
-        }
-}else if (isset($_SESSION["cart_item"])&&isset($_POST['usdt_submit'])) {
+    }
+} else if (isset($_SESSION["cart_item"]) && isset($_POST['usdt_submit'])) {
 
     $f_name = $db_handle->checkValue($_POST['f_name']);
     $l_name = $db_handle->checkValue($_POST['l_name']);
@@ -140,12 +169,14 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
 
     $payment_type = 'USDT';
 
+    $password = randomPassword();
+
     $transaction_num_usdt = $db_handle->checkValue($_POST['transaction_num_usdt']);
 
-    $payment_proof_usdt='';
-    if (!empty($_FILES['payment_proof_usdt']['name'])){
+    $payment_proof_usdt = '';
+    if (!empty($_FILES['payment_proof_usdt']['name'])) {
         $RandomAccountNumber = mt_rand(1, 99999);
-        $file_name = $RandomAccountNumber."_" . $_FILES['payment_proof_usdt']['name'];
+        $file_name = $RandomAccountNumber . "_" . $_FILES['payment_proof_usdt']['name'];
         $file_size = $_FILES['payment_proof_usdt']['size'];
         $file_tmp = $_FILES['payment_proof_usdt']['tmp_name'];
 
@@ -156,17 +187,27 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
         ) {
             $attach_files = '';
         } else {
-            move_uploaded_file($file_tmp, "images/proof/usdt/" .$file_name);
+            move_uploaded_file($file_tmp, "images/proof/usdt/" . $file_name);
             $payment_proof_usdt = "images/proof/usdt/" . $file_name;
         }
     } else {
-        $payment_proof_usdt='';
+        $payment_proof_usdt = '';
     }
 
 
-    $billing_insert = $db_handle->insertQuery("INSERT INTO `billing_details`(`f_name`, `l_name`, `email`, `phone_number`,
+    $login_info = '';
+    if (isset($_POST['usdt_login']) && $user_id == 0) {
+        $select = $db_handle->numRows("SELECT * FROM `user` WHERE email='$email'");
+        if ($select == 0) {
+            $user = $db_handle->insertQuery("INSERT INTO `user`(`f_name`, `l_name`, `email`, `password`, `phone_number`, `country`, `address`, `city`, `zip_code`) VALUES ('$f_name','$l_name','$email','$password','$phone_number','$country','$address','$city','$zip_code')");
+
+            $login_info .= "<h3 style='color:black'>Your login email and password [$email] [$password]. Save this info for login.</h3>";
+        }
+    }
+
+    $billing_insert = $db_handle->insertQuery("INSERT INTO `billing_details`(`f_name`, `l_name`, `email`, `user_id`, `phone_number`,
                               `country`, `address`, `city`, `zip_code`, `payment_type`, `transaction_number`, `transaction_image`) 
-                                VALUES('$f_name','$l_name','$email','$phone_number','$country','$address','$city','$zip_code',
+                                VALUES('$f_name','$l_name','$email','$user_id','$phone_number','$country','$address','$city','$zip_code',
                                        '$payment_type','$transaction_num_usdt','$payment_proof_usdt')");
 
     $billing_id = $db_handle->runQuery("SELECT * FROM billing_details order by id desc limit 1");
@@ -204,7 +245,7 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
                             <h3 style='color:black'>Hi $u!</h3>
                                 
                             <p style='text-align: center;color:green;font-weight:bold'>Thank you for purchasing our package</p>   
-                        
+                            $login_info
                             <p style='color:black'>Your payment currently on pending.<br>
                                 Our team is excited to join you on your journey with us!<br>
                                 We look forward to speaking with you.<br>
@@ -212,7 +253,7 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
                             </p>
                             
                             <p style='color:black;font-weight:bold'>We look forward to speaking with you!<br>
-                                Google Voice Team
+                                Best Google Voice Team
                              </p> 
                              <img src='" . $_SERVER['SERVER_NAME'] . "/images/email/contact.png' width='100%' height='auto' alt=''>
                         </div>
@@ -234,18 +275,18 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
                 </html>
                 ";
 
-    if (mail($email_to, $subject, $messege, $headers)&&mail($db_handle->notify_email(), $subject, $notify_messege, $headers)) {
+    if (mail($email_to, $subject, $messege, $headers) && mail($db_handle->notify_email(), $subject, $notify_messege, $headers)) {
         echo "<script>
                 document.cookie = 'alert = 1;';
                 window.location.href='/';
                 </script>";
-    }else{
+    } else {
         echo "<script>
                 document.cookie = 'alert = 2;';
                 window.location.href='/';
                 </script>";
     }
-}else if (isset($_SESSION["cart_item"])&&isset($_POST['ltc_submit'])) {
+} else if (isset($_SESSION["cart_item"]) && isset($_POST['ltc_submit'])) {
     $f_name = $db_handle->checkValue($_POST['f_name']);
     $l_name = $db_handle->checkValue($_POST['l_name']);
     $company_name = $db_handle->checkValue($_POST['company_name']);
@@ -260,12 +301,14 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
 
     $payment_type = 'LTC';
 
+    $password = randomPassword();
+
     $transaction_num_ltc = $db_handle->checkValue($_POST['transaction_num_ltc']);
 
-    $payment_proof_ltc='';
-    if (!empty($_FILES['payment_proof_btc']['name'])){
+    $payment_proof_ltc = '';
+    if (!empty($_FILES['payment_proof_btc']['name'])) {
         $RandomAccountNumber = mt_rand(1, 99999);
-        $file_name = $RandomAccountNumber."_" . $_FILES['payment_proof_ltc']['name'];
+        $file_name = $RandomAccountNumber . "_" . $_FILES['payment_proof_ltc']['name'];
         $file_size = $_FILES['payment_proof_ltc']['size'];
         $file_tmp = $_FILES['payment_proof_ltc']['tmp_name'];
 
@@ -276,17 +319,27 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
         ) {
             $attach_files = '';
         } else {
-            move_uploaded_file($file_tmp, "images/proof/ltc/" .$file_name);
+            move_uploaded_file($file_tmp, "images/proof/ltc/" . $file_name);
             $payment_proof_ltc = "images/proof/ltc/" . $file_name;
         }
     } else {
-        $payment_proof_ltc='';
+        $payment_proof_ltc = '';
+    }
+
+    $login_info = '';
+    if (isset($_POST['ltc_login']) && $user_id == 0) {
+        $select = $db_handle->numRows("SELECT * FROM `user` WHERE email='$email'");
+        if ($select == 0) {
+            $user = $db_handle->insertQuery("INSERT INTO `user`(`f_name`, `l_name`, `email`, `password`, `phone_number`, `country`, `address`, `city`, `zip_code`) VALUES ('$f_name','$l_name','$email','$password','$phone_number','$country','$address','$city','$zip_code')");
+
+            $login_info .= "<h3 style='color:black'>Your login email and password [$email] [$password]. Save this info for login.</h3>";
+        }
     }
 
 
-    $billing_insert = $db_handle->insertQuery("INSERT INTO `billing_details`(`f_name`, `l_name`, `email`, `phone_number`,
+    $billing_insert = $db_handle->insertQuery("INSERT INTO `billing_details`(`f_name`, `l_name`, `email`, `user_id`, `phone_number`,
                               `country`, `address`, `city`, `zip_code`, `payment_type`, `transaction_number`, `transaction_image`) 
-                                VALUES('$f_name','$l_name','$email','$phone_number','$country','$address','$city','$zip_code',
+                                VALUES('$f_name','$l_name','$email','$user_id','$phone_number','$country','$address','$city','$zip_code',
                                        '$payment_type','$transaction_num_ltc','$payment_proof_ltc')");
 
     $billing_id = $db_handle->runQuery("SELECT * FROM billing_details order by id desc limit 1");
@@ -324,7 +377,7 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
                             <h3 style='color:black'>Hi $u!</h3>
                                 
                             <p style='text-align: center;color:green;font-weight:bold'>Thank you for purchasing our package</p>   
-                        
+                            $login_info
                             <p style='color:black'>Your payment currently on pending.<br>
                                 Our team is excited to join you on your journey with us!<br>
                                 We look forward to speaking with you.<br>
@@ -332,7 +385,7 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
                             </p>
                             
                             <p style='color:black;font-weight:bold'>We look forward to speaking with you!<br>
-                                Google Voice Team
+                                Best Google Voice Team
                              </p> 
                              <img src='" . $_SERVER['SERVER_NAME'] . "/images/email/contact.png' width='100%' height='auto' alt=''>
                         </div>
@@ -354,12 +407,12 @@ if (isset($_SESSION["cart_item"])&&isset($_POST['btc_submit'])) {
                 </html>
                 ";
 
-    if (mail($email_to, $subject, $messege, $headers)&&mail($db_handle->notify_email(), $subject, $notify_messege, $headers)) {
+    if (mail($email_to, $subject, $messege, $headers) && mail($db_handle->notify_email(), $subject, $notify_messege, $headers)) {
         echo "<script>
                 document.cookie = 'alert = 1;';
                 window.location.href='/';
                 </script>";
-    }else{
+    } else {
         echo "<script>
                 document.cookie = 'alert = 2;';
                 window.location.href='/';

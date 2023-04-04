@@ -99,12 +99,12 @@ if (!isset($_SESSION["cart_item"])) {
             display: none;
         }
 
-        .form-control{
+        .form-control {
             color: black;
             border: 1px solid black;
         }
 
-        .checkout-logo{
+        .checkout-logo {
             height: 30px;
         }
 
@@ -153,6 +153,7 @@ if (!isset($_SESSION["cart_item"])) {
                                             <option value="China">China</option>
                                             <option value="Nigeria">Nigeria</option>
                                             <option value="Russia">Russia</option>
+                                            <option value="Thailand">Thailand</option>
                                             <option value="United Kingdom (UK)">United Kingdom (UK)</option>
                                             <option value="United States (US)">United States (US)</option>
                                             <option value="Vietnam">Vietnam</option>
@@ -240,7 +241,8 @@ if (!isset($_SESSION["cart_item"])) {
                                             <div class="input-group-text">
                                                 <input type="radio" name="checkout"
                                                        aria-label="Radio button for following text input" value="btc"
-                                                       checked onclick="checkoutFunction(this.value);" style="height: 20px">
+                                                       checked onclick="checkoutFunction(this.value);"
+                                                       style="height: 20px">
                                             </div>
                                         </div>
                                         <img src="images/checkout/1.png" class="img-fluid checkout-logo" alt=""/>
@@ -279,12 +281,14 @@ if (!isset($_SESSION["cart_item"])) {
                                 <h3>BTC</h3>
                                 <div class="row">
                                     <div class="col-9">
-                                        <p>Please pay in this address <span class="text-primary" id="btc_address"><?php echo $custom_package[0]["btc_address"]; ?></span> 
+                                        <p>Please pay in this address <span class="text-primary"
+                                                                            id="btc_address"><?php echo $custom_package[0]["btc_address"]; ?></span>
                                             from your
                                             wallet and share transaction screenshot for approve your order.</p>
                                     </div>
                                     <div class="col-3">
-                                        <img src="<?php echo $custom_package[0]["btc_qr"]; ?>" class="img-fluid" alt=""/>
+                                        <img src="<?php echo $custom_package[0]["btc_qr"]; ?>" class="img-fluid"
+                                             alt=""/>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -306,36 +310,42 @@ if (!isset($_SESSION["cart_item"])) {
                                             </div>
                                         </div>
 
-                                        <div class="form-check mt-3">
-                                            <input class="form-check-input paypal-class" type="checkbox" value=""
-                                                   id="flexCheckChecked">
-                                            <label class="form-check-label" for="flexCheckChecked">
-                                                By Placing Order You accepting our <a href="Terms-and-Condition"
-                                                                                      class="text-primary"
-                                                                                      target="_blank">terms &
-                                                    condition</a>
-                                            </label>
-                                        </div>
+
+                                        <?php if (!isset($_SESSION['user_id'])) {
+                                            ?>
+                                            <div class="form-check mt-3">
+                                                <input class="form-check-input btc-class" name="btc_login"
+                                                       type="checkbox" value=""
+                                                       id="flexCheckChecked">
+                                                <label class="form-check-label" for="flexCheckChecked">
+                                                    Save information for login
+                                                </label>
+                                            </div>
+                                            <?php
+                                        } ?>
                                     </div>
                                 </div>
                                 <div class="row mt-3">
                                     <div class="form-group col-md-12">
                                         <button class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03" type="submit"
-                                                data-loading-text="Please wait..." name="btc_submit"><span>Place Order</span>
+                                                data-loading-text="Please wait..." name="btc_submit">
+                                            <span>Place Order</span>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                             <div class="contact-form" id="usdt" style="display: none;">
-                                <h3>USDT</h3>
+                                <h3>USDT(trc20)</h3>
                                 <div class="row">
                                     <div class="col-9">
-                                        <p>Please pay in this address <span class="text-primary" id="usdt_address"><?php echo $custom_package[0]["usdt_address"]; ?></span> 
+                                        <p>Please pay in this address <span class="text-primary"
+                                                                            id="usdt_address"><?php echo $custom_package[0]["usdt_address"]; ?></span>
                                             from your
                                             wallet and share transaction screenshot for approve your order.</p>
                                     </div>
                                     <div class="col-3">
-                                        <img src="<?php echo $custom_package[0]["usdt_qr"]; ?>" class="img-fluid" alt=""/>
+                                        <img src="<?php echo $custom_package[0]["usdt_qr"]; ?>" class="img-fluid"
+                                             alt=""/>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -356,23 +366,26 @@ if (!isset($_SESSION["cart_item"])) {
                                                     file</label>
                                             </div>
                                         </div>
-
-                                        <div class="form-check mt-3">
-                                            <input class="form-check-input paypal-class" type="checkbox" value=""
-                                                   id="flexCheckChecked">
-                                            <label class="form-check-label" for="flexCheckChecked">
-                                                By Placing Order You accepting our <a href="Terms-and-Condition"
-                                                                                      class="text-primary"
-                                                                                      target="_blank">terms &
-                                                    condition</a>
-                                            </label>
-                                        </div>
+                                        <?php if (!isset($_SESSION['user_id'])) {
+                                            ?>
+                                            <div class="form-check mt-3">
+                                                <input class="form-check-input usdt-class" name="usdt_login"
+                                                       type="checkbox"
+                                                       value=""
+                                                       id="flexCheckChecked">
+                                                <label class="form-check-label" for="flexCheckChecked">
+                                                    Save information for login
+                                                </label>
+                                            </div>
+                                            <?php
+                                        } ?>
                                     </div>
                                 </div>
                                 <div class="row mt-3">
                                     <div class="form-group col-md-12">
                                         <button class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03" type="submit"
-                                                data-loading-text="Please wait..." name="usdt_submit"><span>Place Order</span>
+                                                data-loading-text="Please wait..." name="usdt_submit">
+                                            <span>Place Order</span>
                                         </button>
                                     </div>
                                 </div>
@@ -381,11 +394,14 @@ if (!isset($_SESSION["cart_item"])) {
                                 <h3>LTC</h3>
                                 <div class="row">
                                     <div class="col-9">
-                                        <p>Please pay in address <span class="text-primary" id="ltc_address"><?php echo $custom_package[0]["ltc_address"]; ?></span> 
-                                            from your wallet and share transaction screenshot for approve your order.</p>
+                                        <p>Please pay in address <span class="text-primary"
+                                                                       id="ltc_address"><?php echo $custom_package[0]["ltc_address"]; ?></span>
+                                            from your wallet and share transaction screenshot for approve your order.
+                                        </p>
                                     </div>
                                     <div class="col-3">
-                                        <img src="<?php echo $custom_package[0]["ltc_qr"]; ?>" class="img-fluid" alt=""/>
+                                        <img src="<?php echo $custom_package[0]["ltc_qr"]; ?>" class="img-fluid"
+                                             alt=""/>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -405,17 +421,19 @@ if (!isset($_SESSION["cart_item"])) {
                                                     file</label>
                                             </div>
                                         </div>
-
-                                        <div class="form-check mt-3">
-                                            <input class="form-check-input ltc-class" type="checkbox" value=""
-                                                   id="flexCheckChecked">
-                                            <label class="form-check-label" for="flexCheckChecked">
-                                                By Placing Order You accepting our <a href="Terms-and-Condition"
-                                                                                      class="text-primary"
-                                                                                      target="_blank">terms &
-                                                    condition</a>
-                                            </label>
-                                        </div>
+                                        <?php if (!isset($_SESSION['user_id'])) {
+                                            ?>
+                                            <div class="form-check mt-3">
+                                                <input class="form-check-input ltc-class" name="ltc_login"
+                                                       type="checkbox"
+                                                       value=""
+                                                       id="flexCheckChecked">
+                                                <label class="form-check-label" for="flexCheckChecked">
+                                                    Save information for login
+                                                </label>
+                                            </div>
+                                            <?php
+                                        } ?>
                                     </div>
                                 </div>
                                 <div class="row mt-3">

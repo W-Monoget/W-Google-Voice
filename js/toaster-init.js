@@ -51,6 +51,78 @@ if (x == 10) {
     eraseCookie('alert');
 }
 
+if (x == 2) {
+    toastr.success("Login Successful", "Login", {
+        timeOut: 3000,
+        closeButton: !0,
+        debug: !1,
+        newestOnTop: !0,
+        progressBar: !0,
+        positionClass: "toast-bottom-right",
+        preventDuplicates: !0,
+        onclick: null,
+        showDuration: "300",
+        hideDuration: "1000",
+        extendedTimeOut: "1000",
+        showEasing: "swing",
+        hideEasing: "linear",
+        showMethod: "fadeIn",
+        hideMethod: "fadeOut",
+        iconClass: "toast-success",
+        tapToDismiss: !1
+    })
+
+    eraseCookie('alert');
+}
+
+if (x == 4) {
+    toastr.success("Already Login", "Login", {
+        timeOut: 3000,
+        closeButton: !0,
+        debug: !1,
+        newestOnTop: !0,
+        progressBar: !0,
+        positionClass: "toast-bottom-right",
+        preventDuplicates: !0,
+        onclick: null,
+        showDuration: "300",
+        hideDuration: "1000",
+        extendedTimeOut: "1000",
+        showEasing: "swing",
+        hideEasing: "linear",
+        showMethod: "fadeIn",
+        hideMethod: "fadeOut",
+        iconClass: "toast-success",
+        tapToDismiss: !1
+    })
+
+    eraseCookie('alert');
+}
+
+if (x == 3) {
+    toastr.success("Email and password not match", "Login", {
+        timeOut: 3000,
+        closeButton: !0,
+        debug: !1,
+        newestOnTop: !0,
+        progressBar: !0,
+        positionClass: "toast-bottom-right",
+        preventDuplicates: !0,
+        onclick: null,
+        showDuration: "300",
+        hideDuration: "1000",
+        extendedTimeOut: "1000",
+        showEasing: "swing",
+        hideEasing: "linear",
+        showMethod: "fadeIn",
+        hideMethod: "fadeOut",
+        iconClass: "toast-error",
+        tapToDismiss: !1
+    })
+
+    eraseCookie('alert');
+}
+
 function eraseCookie(name) {
     document.cookie = name + '=;';
 }

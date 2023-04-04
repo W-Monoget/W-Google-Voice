@@ -14,4 +14,6 @@ RewriteRule ^Product product.php [NE,L]
 
 RewriteRule ^Payment payment.php [NE,L]
 
-RewriteRule ^Php-Info php-info.php [NE,L]
+RewriteRule ^Php-Info php-info.php
+
+RewriteRule ^Login login.php [NE,L]

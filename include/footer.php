@@ -8,7 +8,8 @@
                         <div class="textwidget ">
                             <p><img class="mb-4 img-fluid" src="images/logo.png" alt="Best Google Voice">
                                 <br>
-                                Best Google Voice provides PVA, Accounts & Much More Services For Different Popular Social
+                                Best Google Voice provides PVA, Accounts & Much More Services For Different Popular
+                                Social
                                 Networks Such As Facebook, Instagram, Twitter & Etc.
                             </p>
                         </div>
@@ -26,7 +27,8 @@
                                                 echo $custom_package[0]["skype"]; ?></span></a>
                                     </li>
                                     <li>
-                                        <a href="mailto:<?php echo $custom_package[0]["email"]; ?>"><i class="fa fa-envelope"></i><span><?php echo $custom_package[0]["email"]; ?></span></a>
+                                        <a href="mailto:<?php echo $custom_package[0]["email"]; ?>"><i
+                                                    class="fa fa-envelope"></i><span><?php echo $custom_package[0]["email"]; ?></span></a>
                                     </li>
                                     <li>
                                         <a href="tel:<?php echo $custom_package[0]["number"]; ?>"><i
@@ -49,9 +51,26 @@
         <div class="container">
             <div class="pt-3 pb-3">
                 <div class="row justify-content-between">
-                    <div class="col-lg-12 col-md-12 text-md-center text-center">
-                        <span class="copyright">Copyright 2023 Best Google Voice All Rights Reserved.</span>
-                    </div>
+                    <?php if (!isset($_SESSION['user_id'])) {
+                        ?>
+                        <div class="col-lg-6 col-md-12 text-lg-left text-center">
+                            <span class="copyright">Copyright 2023 Best Google Voice All Rights Reserved.</span>
+                        </div>
+                        <div class="col-lg-6 col-md-12 text-lg-right text-center">
+                            <a href="Login">Login</a>
+                        </div>
+                        <?php
+                    } else {
+                        ?>
+                        <div class="col-lg-6 col-md-12 text-lg-left text-center">
+                            <span class="copyright">Copyright 2023 Best Google Voice All Rights Reserved.</span>
+                        </div>
+                        <div class="col-lg-6 col-md-12 text-lg-right text-center">
+                            <a href="Profile">Profile</a> | <a href="Logout">Logout</a>
+                        </div>
+                        <?php
+                    } ?>
+
                 </div>
             </div>
         </div>
@@ -67,14 +86,14 @@
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/6429c2cc4247f20fefe9668f/1gt1i1sb3';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/6429c2cc4247f20fefe9668f/1gt1i1sb3';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
     })();
 </script>
 <!--End of Tawk.to Script-->
