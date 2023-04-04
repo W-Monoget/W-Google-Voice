@@ -17,3 +17,5 @@ RewriteRule ^Payment payment.php [NE,L]
 RewriteRule ^Php-Info php-info.php
 
 RewriteRule ^Login login.php [NE,L]
+
+RewriteRule ^Logout logout.php [NE,L]

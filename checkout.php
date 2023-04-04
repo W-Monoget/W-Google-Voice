@@ -130,14 +130,37 @@ if (!isset($_SESSION["cart_item"])) {
                             <!--Contact Form-->
                             <div class="contact-form">
                                 <div class="row">
+                                    <?php
+                                    $fname = '';
+                                    $lname = '';
+                                    $email = '';
+                                    $address = '';
+                                    $country = '';
+                                    $city = '';
+                                    $zip_code = '';
+                                    $phone_number = '';
+                                    if (isset($_SESSION['user_id'])) {
+                                        $login_data = $db_handle->runQuery("SELECT * FROM user WHERE id={$_SESSION['user_id']}");
+                                        $fname = $login_data[0]["f_name"];
+                                        $lname = $login_data[0]["l_name"];
+                                        $email = $login_data[0]["email"];
+                                        $address = $login_data[0]["address"];
+                                        $country = $login_data[0]["country"];
+                                        $city = $login_data[0]["city"];
+                                        $zip_code = $login_data[0]["zip_code"];
+                                        $phone_number = $login_data[0]["phone_number"];
+                                    }
+                                    ?>
                                     <div class="form-group col-md-6">
                                         <label>First name <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="f_name" value=""
+                                        <input type="text" class="form-control" name="f_name"
+                                               value="<?php echo $fname; ?>"
                                                placeholder="" required>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Last name <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="l_name" value=""
+                                        <input type="text" class="form-control" name="l_name"
+                                               value="<?php echo $lname; ?>"
                                                placeholder="" required>
                                     </div>
                                     <div class="form-group col-md-12">
@@ -148,6 +171,13 @@ if (!isset($_SESSION["cart_item"])) {
                                     <div class="form-group col-md-12">
                                         <label>Country / Region <span class="text-danger">*</span></label>
                                         <select class="form-control" name="country" required>
+                                            <?php
+                                            if (isset($_SESSION['user_id'])) {
+                                                ?>
+                                                <option value="<?php echo $country; ?>"><?php echo $country; ?></option>
+                                                <?php
+                                            }
+                                            ?>
                                             <option>Please Select</option>
                                             <option value="Canada">Canada</option>
                                             <option value="China">China</option>
@@ -161,12 +191,14 @@ if (!isset($_SESSION["cart_item"])) {
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label>Street address <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="address" value=""
+                                        <input type="text" class="form-control" name="address"
+                                               value="<?php echo $address; ?>"
                                                placeholder="" required>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Town / City <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="city" value="" placeholder=""
+                                        <input type="text" class="form-control" name="city" value="<?php echo $city; ?>"
+                                               placeholder=""
                                                required>
                                     </div>
                                     <div class="form-group col-md-6">
@@ -175,19 +207,22 @@ if (!isset($_SESSION["cart_item"])) {
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Postcode <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="zip_code" value=""
+                                        <input type="text" class="form-control" name="zip_code"
+                                               value="<?php echo $zip_code; ?>"
                                                placeholder="" maxlength="5"
                                                minlength="5" required>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label>Phone <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="phone_number" value=""
+                                        <input type="text" class="form-control" name="phone_number"
+                                               value="<?php echo $phone_number; ?>"
                                                placeholder="" maxlength="10"
                                                minlength="10" required>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label>Email address <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="email" value=""
+                                        <input type="text" class="form-control" name="email"
+                                               value="<?php echo $email; ?>"
                                                placeholder="" required>
                                     </div>
                                 </div>
