@@ -1,4 +1,4 @@
-ErrorDocument 404 http://localhost/W-Google-Voice/404.php
+ErrorDocument 404 http://bestgv.com/404.php
 
 RewriteEngine on
 

@@ -79,6 +79,7 @@ $db_handle = new DBController();
                                         <th>Inv No</th>
                                         <th>Name</th>
                                         <th>Number</th>
+                                        <th>Proof Image</th>
                                         <th>Status</th>
                                         <th>Address</th>
                                         <th>Amount</th>
@@ -107,6 +108,9 @@ $db_handle = new DBController();
                                             <td><?php echo $package_sell_data[$i]["f_name"]; ?> <?php echo $package_sell_data[$i]["l_name"]; ?></td>
                                             <td><?php echo '('.substr($package_sell_data[$i]["phone_number"], 0, 3).')'.substr($package_sell_data[$i]["phone_number"], 3, 3).'-'.substr($package_sell_data[$i]["phone_number"], 6, 4); ?></td>
                                             <td>
+                                                <a href="../<?php echo $package_sell_data[$i]["transaction_image"]; ?>" target="_blank">image</a>
+                                            </td>
+                                            <td>
                                                 <?php
                                                 if ($package_sell_data[$i]["approve"] == 3) {
                                                     ?>
@@ -133,8 +137,8 @@ $db_handle = new DBController();
                                             <td>
                                                 <div class="d-flex">
                                                     <button class="btn btn-secondary shadow btn-xs sharp mr-1"
-                                                       data-toggle="modal" data-target=".bd-example-modal-xl"><i
-                                                                class="fa fa-eye" onclick="showInvoice(<?php echo $package_sell_data[$i]["id"]; ?>);"></i></button>
+                                                       data-toggle="modal" data-target=".bd-example-modal-xl" onclick="showInvoice(<?php echo $package_sell_data[$i]["id"]; ?>);"><i
+                                                                class="fa fa-eye"></i></button>
                                                     <?php
                                                     if ($package_sell_data[$i]["approve"] == 3) {
                                                         ?>

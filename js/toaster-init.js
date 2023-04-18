@@ -18,7 +18,7 @@ if (x == 1) {
         confirmButtonColor: '#1d8a3b',
         title: 'Thank you for your request!',
         text: 'We will get back to you shortly.',
-        imageUrl: 'https://bestgv.com/images/logo.png',
+        imageUrl: 'https://bestgv.com/images/logo-black.png',
         imageWidth: 150,
         imageHeight: 69,
         imageAlt: 'Custom image',

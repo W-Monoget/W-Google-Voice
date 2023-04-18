@@ -1,11 +1,11 @@
 <?php
 class DBController {
-    private $host = "localhost";
-    private $user = "root";
-    private $password = "";
-    private $database = "google_voice";
+    private $host = "server107";
+    private $user = "bestgrcc_bestgvu";
+    private $password = "lO~WDvcfU{KA";
+    private $database = "bestgrcc_bestgvd";
     private $from_email='noreply@bestgv.com';
-    private $notification_email='monoget1@gmail.com';
+    private $notification_email='admin@bestgv.com, seller@bestgv.com';
     private $conn;
 
     function __construct() {

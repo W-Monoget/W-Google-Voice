@@ -88,22 +88,3 @@
         background-color: #884e4e;
     }
 </style>
-<?php
-/*$ip = $_SERVER['REMOTE_ADDR']; // your ip address here
-$query = @unserialize(file_get_contents('http://ip-api.com/php/' . $ip));
-
-$country_code = '';
-if ($query && $query['status'] == 'success') {
-    $country_code = $query['countryCode'];
-}
-
-$country_check = 0;
-
-if ($country_code == 'CN' || $country_code == 'CA' || $country_code == 'US' || $country_code == 'RU' || $country_code == 'NG' || $country_code == 'VN'|| $country_code == 'TH') {
-    $country_check = 1;
-}
-
-if ($country_check == 0) {
-    header('Location:404');
-}*/
-?>
